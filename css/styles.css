@@ -211,6 +211,12 @@ p {
   flex: 0 0 65%;
 }
 
+/*///////Experience///////*/
+.portfolio-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /*///////Contact Footer///////*/
 .contact-section {
   color:#F4F6FF;
