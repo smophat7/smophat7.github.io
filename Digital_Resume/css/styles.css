@@ -1,0 +1,242 @@
+/***************************TAG SELECTORS**************************/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E6DEDD;
+  margin: 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #10375C;
+}
+
+h1 {
+  font-family: 'Kaushan Script', cursive;
+  margin-top: 0;
+  padding-top: 100px;
+}
+
+h2 {
+  color: #10375C;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 80px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #10375C;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 0;
+}
+
+p {
+  color: #10375C;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2;
+  margin: 0;
+}
+
+
+/***************************CLASS SELECTORS**************************/
+
+/*///////Navigation Controls and Navigation Bar///////*/
+.scrolled-to-top {
+  position: relative;
+  top: -67.2px;
+}
+
+.scrolled-to {
+  position: relative;
+  top: -50.2px;
+}
+
+.navigation-bar {
+  background-color: #10375C;
+  height: 67.2px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.nav-bar-options {
+  float: right;
+}
+
+.nav-bar-name-label {
+  float: left;
+  margin-left: 60px;
+}
+
+.nav-bar-name-box {
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+
+.nav-bar-links {
+  color: #F4F6FF;
+  font-family: 'Roboto Slab', serif;
+  display: block;
+  padding: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-bar-links:hover {
+  background-color: #127681;
+  height: 67.2px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  display: inline-block;
+  left: 15px;
+  padding-top: 0.7rem;
+  position: absolute;
+  width: 45px;
+}
+
+/*///////Top of Main Page Components///////*/
+.home-container-flexbox {
+  background-image: linear-gradient(#10375C, #127681);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 67.2px;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.welcome-text {
+  color: #F4F6FF;
+  flex: 0 0 30%;
+}
+
+.linkedin-link {
+  width: 8%;
+  margin-right: 12px;
+  transition: transform 0.2s;
+}
+
+.linkedin-link:hover {
+  transform: scale(1.5);
+}
+
+.handshake-link {
+  width: 8%;
+  margin-left: 12px;
+  transition: transform 0.2s;
+}
+
+.handshake-link:hover {
+  transform: scale(1.5);
+}
+
+.spencer-no-background {
+  height: 100vh;
+  opacity: 0.93;
+  flex: 0 0 40%;
+}
+
+/*///////About Me///////*/
+.about-container {
+  border-top-color:#10375C;
+  border-top-width: medium;
+  border-top-style: groove;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-me-content {
+  width: 40%;
+  margin: auto;
+}
+
+.about-me-img {
+  width: 30%;
+  margin: 20px auto 0 auto;
+}
+
+/*///////Education///////*/
+.education-container {
+  color: #1B120F;
+  width: 50%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+.left-col {
+  display:inline-block;
+}
+
+.extracurriculars {
+  clear: left;
+}
+
+.BYU-logo {
+  width: 20%;
+  margin: 0 auto;
+}
+
+/*///////Experience///////*/
+.exp-flexbox {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-around;
+  margin: 0 auto;
+  height: 1000px;
+  width: 70%;
+}
+
+.exp-column1 {
+  justify-content: center;
+  text-align: center;
+  flex: 0 0 25%;
+}
+
+.exp-column2 {
+  justify-content: center;
+  text-align: left;
+  flex: 0 0 65%;
+}
+
+/*///////Contact Footer///////*/
+.contact-section {
+  color:#F4F6FF;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.contact-details {
+  color: #F4F6FF;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.contact-details:hover {
+  color:#127681;
+}
+
+.icon-credit {
+  color:#F4F6FF;
+  margin-top: 15px;
+  font-size: 0.5rem;
+}
+
+.copyright {
+  color:#F4F6FF;
+  margin-top: 3px;
+  font-size: 0.8rem;
+}
