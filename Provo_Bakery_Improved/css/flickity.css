@@ -138,7 +138,6 @@ https://flickity.metafizzy.co
 
 
 
-
 /*User Editable Options*/
 
 * { box-sizing: border-box; }
@@ -151,8 +150,8 @@ body { font-family: sans-serif; }
 }
 
 .carousel-cell {
-  width: 70%;
-  height: 200px;
+  width: 85%;
+  height: 300;
   /* flex-box, center image in cell */
   display: -webkit-box;
   display: -webkit-flex;
@@ -189,7 +188,7 @@ body { font-family: sans-serif; }
 
 @media screen and ( min-width: 768px ) {
   .carousel-cell {
-    height: 400px;
+    height: 350px;
   }
 }
 

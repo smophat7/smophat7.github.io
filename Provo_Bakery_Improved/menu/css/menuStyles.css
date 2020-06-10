@@ -111,27 +111,3 @@ footer > p {
 /*******************************THIS PAGE ONLY******************************/
 
 /**********CLASS SELECTORS**********/
-.announcement-links {
-  margin: 30px auto;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: center
-}
-
-.main-announcements {
-  margin: 20px;
-  flex-basis: 240px;
-}
-
-.secondary-announcements {
-  margin: 20px;
-  flex-basis: 180px;
-}
-
-.contact-links {
-  margin: 20px;
-  flex-basis: 240px;
-}
