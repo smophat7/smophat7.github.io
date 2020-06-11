@@ -1,0 +1,268 @@
+/***************************TAG SELECTORS**************************/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Kaushan Script', cursive;
+  margin-top: 0;
+  padding-top: 100px;
+}
+
+h2 {
+  color: #10375C;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 80px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #10375C;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 0;
+}
+
+p {
+  color: #10375C;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2;
+  margin: 0;
+}
+
+
+/***************************CLASS SELECTORS**************************/
+
+/*///////Navigation Controls and Navigation Bar///////*/
+.navbar-custom {
+  background-color: #10375C
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+.nav-bar-wrapper {
+  height: 66px;
+}
+
+.scrolled-to {
+  position: relative;
+  top: -50.2px;
+}
+
+
+/*///////Top of Main page Components///////*/
+.welcome-spread-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-image: linear-gradient(#10375C, #127681);
+  align-items: flex-start;
+  text-align: center;
+}
+
+.welcome-message-contents {
+  margin-left: 15%;
+}
+
+.welcome-text {
+  color: white;
+  font-size: 4vw;
+  margin-top: 20%;
+
+  font-family: 'Kaushan Script', cursive;
+}
+
+.linkedin-link {
+  width: 5vw;
+  margin-right: 2.5vw;
+  transition: transform 0.2s;
+}
+
+.linkedin-link:hover {
+  transform: scale(1.2);
+}
+
+.handshake-link {
+  width: 5vw;
+  margin-left: 2.5vw;
+  transition: transform 0.2s;
+}
+
+.handshake-link:hover {
+  transform: scale(1.2);
+}
+
+.welcome-image {
+  max-width: 90%;
+  opacity: 0.9;
+}
+
+
+/*///////About Me///////*/
+.about-container {
+  border-top-color:#10375C;
+  border-top-width: medium;
+  border-top-style: groove;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-me-content {
+  width: 40%;
+  margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .about-me-content {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-me-content {
+    width: 80%;
+  }
+}
+
+.about-me-img {
+  width: 30%;
+  margin: 20px auto 0 auto;
+}
+
+/*///////Education///////*/
+.education-container {
+  color: #1B120F;
+  width: 50%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  .education-container {
+    width: 70%;
+  }
+}
+
+.left-col {
+  display:inline-block;
+}
+
+.extracurriculars {
+  clear: left;
+}
+
+.BYU-logo {
+  width: 150px;
+  margin: 0 auto;
+}
+
+
+/*///////Experience///////*/
+
+.experience-heading {
+  margin-bottom: 100px;
+}
+
+.experience-container {
+  margin-bottom: 0;
+}
+
+.exp-flexbox {
+  display: grid;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: space-around;
+  margin: 100px auto 100px;
+  height: auto;
+  width: 70%;
+  grid-template-columns: auto auto;
+  grid-gap: 5%;
+}
+
+@media screen and (max-width: 725px) {
+  .exp-flexbox{
+    margin: 125px auto;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .exp-flexbox{
+    margin: 150px auto;
+    width: 90%;
+  }
+}
+
+.exp-column1 {
+}
+
+.exp-column2 {
+  text-align: left;
+}
+
+
+/*///////Portfolio///////*/
+.portfolio-container {
+  width: 50%;
+  margin: 0 auto 100px;
+}
+
+@media screen and (max-width: 850px) {
+  .portfolio-container {
+    width: 65%;
+    margin: 0 auto 75px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-container {
+    width: 75%;
+    margin: 0 auto 50px;
+  }
+}
+
+
+/*///////Contact Footer///////*/
+.contact-container {
+  background-color: #10375C;
+  text-align: center;
+}
+
+.contact-section {
+  color:#F4F6FF;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.contact-details {
+  color: #F4F6FF;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.contact-details:hover {
+  color:#127681;
+}
+
+.icon-credit {
+  color:#F4F6FF;
+  margin-top: 15px;
+  font-size: 0.5rem;
+}
+
+.copyright {
+  color:#F4F6FF;
+  margin-top: 3px;
+  font-size: 0.8rem;
+}
