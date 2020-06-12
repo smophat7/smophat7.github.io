@@ -54,6 +54,7 @@ img {
 .page-summary-text>p {
   width: 50%;
   text-align: left;
+  font-size: 1.3rem;
 }
 
 .help-icon {
@@ -67,7 +68,7 @@ img {
 /**************Template Grid**************/
 .main-grid {
   width: 80%;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 60px auto;
   display: grid;
   justify-content: space-around;
   align-content: center;
@@ -234,6 +235,29 @@ img {
 }
 
 
+/*//////////////////Next Page Options//////////////////*/
+.next-page-options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.next-page-options > h4 {
+  align-self: center;
+  margin: 0;
+}
+
+button {
+  margin: 20px 12px 50px;
+}
+
+.btn {
+  font-size: 1.6rem;
+}
+
+
 /*///////////////////////Footer///////////////////////*/
 .footer-flex {
   background-color: #4484CE;
@@ -275,6 +299,7 @@ img {
 
   .main-grid {
     justify-content: center;
+    margin-bottom: 40px;
     grid-gap: 70px;
     grid-template-areas:
       'people-header people-header people-header people-header'
@@ -315,16 +340,33 @@ img {
 
   .main-grid {
     grid-gap: 50px;
+    margin-bottom: 30px
   }
 
   .option {
     width: 200px;
     height: 200px;
   }
+
+  .btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (max-width: 490px) {
+  .page-summary-text>p {
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    margin: 25px auto;
+  }
+
   .main-grid {
+    margin-bottom: 20px;
+    grid-gap: 8px;
     grid-template-areas:
       'people-header people-header people-header people-header'
       'people-1 people-1 people-1 people-1'
