@@ -1,38 +1,38 @@
-/* Color Scheme
-#4484CE
-#D9D9D9
-#F9CF00
-#F19F4D
+/* Color Scheme #4484CE #D9D9D9 #F9CF00 #F19F4D */
 
-*/
-
+/***************************TAG SELECTORS**************************/
 
 body {
   text-align: center;
+}
+
+h1 {
+  text-align: left;
 }
 
 h3 {
   width: 100%;
 }
 
-
-.navbar-brand {
+a {
   color: white;
 }
 
+img {
+  width: 30px;
+  filter: invert(100%);
+}
+
+/***************************CLASS SELECTORS**************************/
+
+
+/*///////Navigation Controls and Navigation Bar///////*/
 .navbar-custom {
   background-color: #4484CE;
 }
 
-.page-summary {
-  text-align: left;
-  flex-basis: 700px;
-}
 
-.page-summary > h1 {
-  text-align: left;
-}
-
+/*///////////////////Header of Page///////////////////*/
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -41,10 +41,9 @@ h3 {
   margin: 35px auto auto;
 }
 
-.help-icon {
-  width: 25px;
-  height: 25px;
-
+.page-summary {
+  text-align: left;
+  flex-basis: 700px;
 }
 
 .page-summary-text {
@@ -52,15 +51,23 @@ h3 {
   margin: auto;
 }
 
-.page-summary-text > p {
-  width: 60%;
+.page-summary-text>p {
+  width: 50%;
   text-align: left;
 }
 
+.help-icon {
+  width: 25px;
+  height: 25px;
+  filter: invert(0);
+}
+
+
+/*///////////////Main Grid with Options///////////////*/
 /**************Template Grid**************/
 .main-grid {
   width: 80%;
-  margin: 0 auto 100px auto;  /*Edit this for @media queries*/
+  margin: 0 auto 100px auto;
   display: grid;
   justify-content: space-around;
   align-content: center;
@@ -72,13 +79,11 @@ h3 {
     'people-1 people-2 people-3 people-4'
     'people-1 people-2 people-3 people-4'
     'people-1 people-2 people-3 people-4'
-
     'financial-header financial-header financial-header financial-header'
     'financial-1 financial-2 financial-3 financial-4'
     'financial-1 financial-2 financial-3 financial-4'
     'financial-1 financial-2 financial-3 financial-4'
     'financial-1 financial-2 financial-3 financial-4'
-
     'time-header time-header time-header time-header'
     'time-1 time-2 time-3 time-4'
     'time-1 time-2 time-3 time-4'
@@ -86,24 +91,67 @@ h3 {
     'time-1 time-2 time-3 time-4';
 }
 
-.people-title { grid-area: people-header; }
-.customer-info { grid-area: people-1; }
-.client-relations { grid-area: people-2; }
-.employee-management { grid-area: people-3; }
-.personal-dates { grid-area: people-4; }
+.people-title {
+  grid-area: people-header;
+}
 
-.financial-title { grid-area: financial-header; }
-.sales-tracker { grid-area: financial-1; }
-.sales-forecast { grid-area: financial-2; }
-.expense-report { grid-area: financial-3; }
-.wage-brackets { grid-area: financial-4; }
+.customer-info {
+  grid-area: people-1;
+}
 
-.time-title { grid-area: time-header; }
-.shift-scheduler { grid-area: time-1; }
-.incoming-shipments { grid-area: time-2; }
-.meeting-calendar { grid-area: time-3; }
-.trip-planner { grid-area: time-4; }
+.client-relations {
+  grid-area: people-2;
+}
 
+.employee-management {
+  grid-area: people-3;
+}
+
+.personal-dates {
+  grid-area: people-4;
+}
+
+.financial-title {
+  grid-area: financial-header;
+}
+
+.sales-tracker {
+  grid-area: financial-1;
+}
+
+.sales-forecast {
+  grid-area: financial-2;
+}
+
+.expense-report {
+  grid-area: financial-3;
+}
+
+.wage-brackets {
+  grid-area: financial-4;
+}
+
+.time-title {
+  grid-area: time-header;
+}
+
+.shift-scheduler {
+  grid-area: time-1;
+}
+
+.incoming-shipments {
+  grid-area: time-2;
+}
+
+.meeting-calendar {
+  grid-area: time-3;
+}
+
+.trip-planner {
+  grid-area: time-4;
+}
+
+/*******Grid and content Settings********/
 .option {
   width: 175px;
   height: 175px;
@@ -115,30 +163,116 @@ h3 {
   padding-bottom: 100%;
 }
 
-.option > p {
+.option>p {
   width: 80%;
   margin: auto;
   font-size: 1rem;
-}
-
-.thing {
-  width: 100%;
 }
 
 .title {
   font-size: 2.5rem;
 }
 
+/***********Flipping Box Structure and Effects*************/
+.flip-box {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  border-radius: 3%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #F19F4D;
+  color: white;
+  display: flex;
+  margin: auto;
+}
+
+.flip-box-front-content {
+  width: 90%;
+  margin: auto;
+}
+
+.flip-box-front-content>img {
+  width: 60%;
+  filter: invert(100%);
+  padding: 5%;
+}
+
+.flip-box-back>p {
+  width: 90%;
+  margin: auto;
+  font-size: 0.9rem;
+}
+
+/* Style the back side */
+.flip-box-back {
+  display: flex;
+  background-color: #F19F4D;
+  color: white;
+  transform: rotateX(180deg);
+}
+
+
+/*///////////////////////Footer///////////////////////*/
+.footer-flex {
+  background-color: #4484CE;
+  color: white;
+  height: 135px;
+  display: flex;
+  justify-content: center;
+}
+
+.site-purpose {
+  width: 55%;
+  margin: 10px auto 0;
+  font-size: 0.7rem;
+}
+
+.icon-credit {
+  font-size: 0.4rem;
+  margin: 15px auto;
+}
+
+.copyright {
+  margin: 0 auto;
+}
+
+
+/*////////////////////Media Queries////////////////////*/
 @media screen and (max-width: 950px) {
   .page-header {
     width: 60%;
   }
+
   .page-summary-text {
     width: 60%;
   }
-  .page-summary-text > p {
+
+  .page-summary-text>p {
     width: 80%;
   }
+
   .main-grid {
     justify-content: center;
     grid-gap: 70px;
@@ -148,13 +282,11 @@ h3 {
       'people-1 people-1 people-2 people-2'
       'people-3 people-3 people-4 people-4'
       'people-3 people-3 people-4 people-4'
-
       'financial-header financial-header financial-header financial-header'
       'financial-1 financial-1 financial-2 financial-2'
       'financial-1 financial-1 financial-2 financial-2'
       'financial-3 financial-3 financial-4 financial-4'
       'financial-3 financial-3 financial-4 financial-4'
-
       'time-header time-header time-header time-header'
       'time-1 time-1 time-2 time-2'
       'time-1 time-1 time-2 time-2'
@@ -177,7 +309,7 @@ h3 {
     width: 80%;
   }
 
-  .page-summary-text > p {
+  .page-summary-text>p {
     width: 100%;
   }
 
@@ -199,13 +331,11 @@ h3 {
       'people-2 people-2 people-2 people-2'
       'people-3 people-3 people-3 people-3'
       'people-4 people-4 people-4 people-4'
-
       'financial-header financial-header financial-header financial-header'
       'financial-1 financial-1 financial-1 financial-1'
       'financial-2 financial-2 financial-2 financial-2'
       'financial-3 financial-3 financial-3 financial-3'
       'financial-4 financial-4 financial-4 financial-4'
-
       'time-header time-header time-header time-header'
       'time-1 time-1 time-1 time-1'
       'time-2 time-2 time-2 time-2'
@@ -216,69 +346,4 @@ h3 {
   .option {
     margin: 10px auto;
   }
-}
-
-/**************Template Grid**************/
-/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-box {
-  background-color: transparent;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-/* This container is needed to position the front and back side */
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-/* Do a horizontal flip when you move the mouse over the flip box container */
-.flip-box:hover .flip-box-inner {
-  transform: rotateX(180deg);
-}
-
-/* Position the front and back side */
-.flip-box-front, .flip-box-back {
-  border-radius: 3%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the front side */
-.flip-box-front {
-  background-color: #F19F4D;
-  color: white;
-  display: flex;
-  margin: auto;
-}
-
-.flip-box-front-content {
-  width: 90%;
-  margin: auto;
-}
-
-.flip-box-front-content > img {
-  width: 60%;
-  filter: invert(100%);
-  padding: 5%;
-}
-
-.flip-box-back > p {
-  width: 90%;
-  margin: auto;
-  font-size: 0.9rem;
-}
-
-/* Style the back side */
-.flip-box-back {
-  display: flex;
-  background-color: #F19F4D;
-  color: white;
-  transform: rotateX(180deg);
 }
