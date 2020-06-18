@@ -16,7 +16,7 @@ h1 {
 h2 {
   color: #10375C;
   font-family: 'Roboto Slab', serif;
-  margin-top: 80px;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
@@ -48,6 +48,8 @@ p {
 .page-grid {
   display: grid;
   grid-template-rows: auto auto auto auto;
+  gride;
+  grid-gap: 75px;
 }
 
 .nav-bar-wrapper {
@@ -56,9 +58,13 @@ p {
 
 .scrolled-to {
   position: relative;
-  top: -50.2px;
+  top: -100px;
 }
 
+.scrolled-to-about {
+  position: relative;
+  top: -60px;
+}
 
 /*///////Top of Main page Components///////*/
 .welcome-spread-grid {
@@ -113,7 +119,11 @@ p {
   border-top-width: medium;
   border-top-style: groove;
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+}
+
+.about-heading {
+  margin-top: 50px;
 }
 
 .about-me-content {
@@ -169,7 +179,7 @@ p {
 /*///////Experience///////*/
 
 .experience-heading {
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .experience-container {
@@ -181,23 +191,26 @@ p {
   justify-content: space-around;
   align-items: flex-start;
   align-content: space-around;
-  margin: 100px auto 100px;
+  /* margin: 100px auto 100px; */
+  margin: 30px auto;
   height: auto;
   width: 70%;
   grid-template-columns: auto auto;
-  grid-gap: 5%;
+  /* grid-gap: 30px; */
+  column-gap: 10px;
+  row-gap: 30px;
 }
 
 @media screen and (max-width: 725px) {
   .exp-flexbox{
-    margin: 125px auto;
+    /* margin: 125px auto; */
     width: 90%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .exp-flexbox{
-    margin: 150px auto;
+    /* margin: 150px auto; */
     width: 90%;
   }
 }
