@@ -19,6 +19,10 @@ h2 {
   margin: 0 auto 20px;
 }
 
+p {
+  margin-top: 100px;
+}
+
 button {
   font-family: 'Press Start 2P', cursive;
   background-color: white;

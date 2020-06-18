@@ -1,13 +1,6 @@
 // Still need to do:
-// Do the layout and coloring entirely by yourself. Don't copy Udemy, because that's not cool.
-// Make it compatible with mobile! This means sizing, but it also means that the game must be
-  // able to be started with any sort of click, not just a keypress.
 //Display the high score during the game
 //Option to show Instructions
-//Add sound effect for white box
-
-// Make this accessible from the smophat.github.io resume homepage,
-  // Then go ahead and implement some sort of carousel/gallery-type behavior.
 
 var buttonColors = ["red", "blue", "green", "yellow", "white"];
 var numOptions = 0;
@@ -15,12 +8,14 @@ var gamePattern = [];
 var userClickedPattern = [];
 var randomChosenColor = "";
 var numLevel = 0;
+var highScore = 0;
 
 $("button").click(function() {
   if (numLevel === 0) {
     var userClick = this.id;
-    $("#" + userClick).addClass("pressed");
+    $("h1").text("Level 1");
     $("h2").text("Difficulty:");
+    $("#" + userClick).addClass("pressed");
     setTimeout(function() {
       $("#" + userClick).removeClass("pressed");
     }, 100);
@@ -32,8 +27,8 @@ $("button").click(function() {
       $(".yellow").addClass("hidden");
       $(".white").addClass("hidden");
       numOptions = 3;
-      $("#normal").addClass("hidden");
-      $("#hard").addClass("hidden");
+      $("button").addClass("hidden");
+      $("h2").text("High Score: " + highScore);
     }
     else if (userClick === "normal") {
       //settings for Normal mode
@@ -43,8 +38,8 @@ $("button").click(function() {
       $(".yellow").removeClass("hidden");
       $(".white").addClass("hidden");
       numOptions = 4;
-      $("#easy").addClass("hidden");
-      $("#hard").addClass("hidden");
+      $("button").addClass("hidden");
+      $("h2").text("High Score: " + highScore);
     }
     else if (userClick === "hard") {
       //settings for Hard mode
@@ -54,8 +49,8 @@ $("button").click(function() {
       $(".yellow").removeClass("hidden");
       $(".white").removeClass("hidden");
       numOptions = 5;
-      $("#easy").addClass("hidden");
-      $("#normal").addClass("hidden");
+      $("button").addClass("hidden");
+      $("h2").text("High Score: " + highScore);
     }
     $(".btn:not(.hidden)").fadeTo("fast", 1.0)
     setTimeout(function() {
@@ -80,6 +75,8 @@ function nextSequence() {
   randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
   playSequence(randomChosenColor);
+  updateHighScore();
+  $("h2").text("High Score: " + highScore);
   userClickedPattern = [];
 }
 
@@ -102,7 +99,7 @@ function checkAnswer(currentLevel) {
     $("h1").text("Game Over!");
     setTimeout(function() {
       $(".btn:not(.hidden)").fadeTo("slow", 0.5);
-      $("h1").text("Play Again?");
+      $("h1").text("High Score: " + highScore);
       $("h2").text("Select Difficulty:");
       $("#easy").removeClass("hidden");
       $("#normal").removeClass("hidden");
@@ -110,6 +107,12 @@ function checkAnswer(currentLevel) {
     }, 1500)
     numLevel = 0;
     gamePattern = [];
+  }
+}
+
+function updateHighScore() {
+  if (numLevel > 1 && numLevel > highScore) {
+    highScore = numLevel - 1;
   }
 }
 
