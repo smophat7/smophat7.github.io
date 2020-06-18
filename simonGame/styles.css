@@ -1,29 +1,96 @@
+/*******************TAG SELECTORS*******************/
+
 body {
-  text-align: center;
-  background-color: #011F3F;
-}
-
-#level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  color: white;
+  background-color: #04113E;
+  text-align: center;
+  margin: 0;
 }
 
-.container {
-  display: block;
-  width: 50%;
-  margin: auto;
+h1 {
+  font-size: 2.5rem;
+  margin: 20px;
+}
 
+h2 {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 auto 20px;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  background-color: white;
+  padding: 15px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  border-width: thin;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/******************CLASS SELECTORS******************/
+
+.instructions {
+  margin: 0;
+}
+
+/***********Button Layout**********/
+.button-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.narrow-container {
+  width: 700px;
 }
 
 .btn {
+  width: 170px;
+  height: 170px;
   margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 10px;
+  border-color: black;
+  opacity: 50%;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.white {
+  background-color: white;
+}
+
+/***********Game Effects***********/
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
 }
 
 .game-over {
@@ -31,23 +98,124 @@ body {
   opacity: 0.8;
 }
 
-.red {
-  background-color: red;
+/********Difficulty Settings*******/
+.hidden {
+  display: none;
 }
 
-.green {
-  background-color: green;
+.larger-container {
+  width: 800px;
 }
 
-.blue {
-  background-color: blue;
+/***********Media Queries**********/
+@media screen and (max-width:800px) {
+  h2 {
+    font-size: 1rem;
+  }
+
+  .narrow-container {
+    width: 500px;
+  }
+
+  .larger-container {
+    width: 600px;
+  }
+
+  .btn {
+    width: 140px;
+    height: 140px;
+    margin: 20px;
+  }
 }
 
-.yellow {
-  background-color: yellow;
+@media screen and (max-width:610px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.6rem;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .narrow-container {
+    width: 350px;
+  }
+
+  .larger-container {
+    width: 425px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
 }
 
-.pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+@media screen and (max-width:500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 0.6rem;
+  }
+
+  button {
+    font-size: 0.5rem;
+    background-color: white;
+    padding: 8px;
+  }
+
+  .narrow-container {
+    width: 300px;
+  }
+
+  .larger-container {
+    width: 400px;
+  }
+
+  .btn {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .narrow-container {
+    width: 300px;
+  }
+
+  .larger-container {
+    width: 350px;
+  }
+
+  .btn {
+    width: 70px;
+    height: 70px;
+    margin: 8px;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .narrow-container {
+    width: 250px;
+  }
+
+  .larger-container {
+    width: 300px;
+  }
+
+  .btn {
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+  }
 }
