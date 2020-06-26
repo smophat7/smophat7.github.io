@@ -48,7 +48,6 @@ p {
 .page-grid {
   display: grid;
   grid-template-rows: auto auto auto auto;
-  gride;
   grid-gap: 75px;
 }
 
@@ -213,9 +212,6 @@ p {
     /* margin: 150px auto; */
     width: 90%;
   }
-}
-
-.exp-column1 {
 }
 
 .exp-column2 {
