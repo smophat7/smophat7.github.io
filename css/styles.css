@@ -190,26 +190,22 @@ p {
   justify-content: space-around;
   align-items: flex-start;
   align-content: space-around;
-  /* margin: 100px auto 100px; */
   margin: 30px auto;
   height: auto;
   width: 70%;
   grid-template-columns: auto auto;
-  /* grid-gap: 30px; */
-  column-gap: 10px;
+  column-gap: 25px;
   row-gap: 30px;
 }
 
 @media screen and (max-width: 725px) {
   .exp-flexbox{
-    /* margin: 125px auto; */
     width: 90%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .exp-flexbox{
-    /* margin: 150px auto; */
     width: 90%;
   }
 }

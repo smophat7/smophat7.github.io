@@ -2,12 +2,22 @@ body {
   text-align: center;
 }
 
+footer {
+  margin-top: 150px;
+}
+
 .timer {
   font-size: 8rem;
   display: inline-block;
 }
 
-.btn {
+.btn-timer-type {
+  width: 150px;
+  height: 40px;
+  margin: 50px 10px 25px;
+}
+
+.btn-controls {
   width: 100px;
   height: 50px;
   margin: auto 10px;
