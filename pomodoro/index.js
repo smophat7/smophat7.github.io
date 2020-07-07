@@ -26,6 +26,9 @@ $("#pomodoro-button").click(function() {
   if (currentTimerSetting != "pomodoro") {
     updateTimerType("pomodoro");
     clearInterval(timerRunning);
+    $("#stop-button").hide();
+    $("#reset-button").hide();
+    $("#start-button").fadeIn();
   }
 });
 
@@ -33,6 +36,9 @@ $("#short-break-button").click(function() {
   if (currentTimerSetting != "shortBreak") {
     updateTimerType("shortBreak");
     clearInterval(timerRunning);
+    $("#stop-button").hide();
+    $("#reset-button").hide();
+    $("#start-button").fadeIn();
   }
 });
 
@@ -40,6 +46,9 @@ $("#long-break-button").click(function() {
   if (currentTimerSetting != "longBreak") {
     updateTimerType("longBreak");
     clearInterval(timerRunning);
+    $("#stop-button").hide();
+    $("#reset-button").hide();
+    $("#start-button").fadeIn();
   }
 });
 
