@@ -3,6 +3,7 @@
   // Make it so that the stop and reset buttons do something, style them later.
   // Have some larger counts going to display overall session progress (how many pomodoros until
     // the big break, for example) and to be able to shift between the three different timer types
+  // Use different images for the start and stop buttons and only have some visible when needed (animate in an out of frame)
 
 
 
@@ -22,36 +23,58 @@ var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on
 
 // Timer Type Controls
 $("#pomodoro-button").click(function() {
-  updateTimerType("pomodoro");
+  if (currentTimerSetting != "pomodoro") {
+    updateTimerType("pomodoro");
+    clearInterval(timerRunning);
+  }
 });
 
 $("#short-break-button").click(function() {
-  updateTimerType("shortBreak");
+  if (currentTimerSetting != "shortBreak") {
+    updateTimerType("shortBreak");
+    clearInterval(timerRunning);
+  }
 });
 
 $("#long-break-button").click(function() {
-  updateTimerType("longBreak");
+  if (currentTimerSetting != "longBreak") {
+    updateTimerType("longBreak");
+    clearInterval(timerRunning);
+  }
 });
 
 
 // Timer Playing Controls
 $("#start-button").click(function() {
   timerRunning = setInterval("Decrement()", 1000);
+  updateTimerType(currentTimerSetting);
+  $("#start-button").hide();
+  $("#stop-button").fadeIn();
+  $("#reset-button").fadeIn();
 });
 
 $("#stop-button").click(function() {
   clearInterval(timerRunning);
+  $("#stop-button").hide();
+  $("#start-button").fadeIn();
 });
 
 $("#reset-button").click(function() {
+  clearInterval(timerRunning);
   updateTimeValues();
+  updateTimerType(currentTimerSetting);
+  $("#stop-button").hide();
+  $("#reset-button").hide();
+  $("#start-button").fadeIn();
 });
 
 
 // Changing Timer Types and Resetting Clocks
 function updateTimerType(newType) {
-  currentTimerSetting = newType;
-  updateTimeValues();
+  if (currentTimerSetting != newType) {
+    currentTimerSetting = newType;
+    updateTimeValues();
+  }
   if (newType === "pomodoro") {
     $(".timer-type").text("Pomodoro");
   }

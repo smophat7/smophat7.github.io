@@ -1,4 +1,17 @@
+/* Color Scheme */
+:root {
+  --main-bg-color: #204051;
+  --secondary-bg-color: #3B6978;
+  --main-text-color: #E4E3E3;
+  --secondary-text-color: #84A9AC;
+}
+
+
+/******************** Tag Selectors ********************/
+
 body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
   text-align: center;
 }
 
@@ -6,19 +19,102 @@ footer {
   margin-top: 150px;
 }
 
+
+/******************** Class Selectors ********************/
+
+/* Bootstrap Navbar Overrides */
+.navbar-custom {
+  margin-bottom: 30px;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: var(--main-text-color);
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--main-text-color);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: var(--secondary-text-color);
+}
+
+
+/* Everything Else */
+.timer-type {
+  margin-bottom: 0;
+}
+
 .timer {
   font-size: 8rem;
   display: inline-block;
 }
 
+.timer-control-buttons-container {
+  width: 250px;
+  height: 50px;
+  margin: 0 auto 0;
+}
+
+.timer-control-buttons {
+  width: 50px;
+  margin: auto 20px;
+}
+
+.timer-control-buttons:hover {
+  cursor: pointer;
+}
+
+#stop-button {
+  display: none;
+}
+
+#reset-button {
+  display: none;
+}
+
 .btn-timer-type {
   width: 150px;
   height: 40px;
-  margin: 50px 10px 25px;
+  margin: 5px 10px;
 }
 
-.btn-controls {
-  width: 100px;
-  height: 50px;
-  margin: auto 10px;
+.btn,
+.btn:hover,
+.btn:active,
+.btn:visited,
+.btn:focus {
+  background-color: var(--secondary-bg-color);
+  border-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
+}
+
+
+/******************** Media Queries ********************/
+@media screen and (max-width: 775px) {
+  .btn-timer-type {
+    width: 100px;
+    height: 65px;
+    margin: 5px 2px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .timer {
+    font-size: 6rem;
+  }
+
+  .btn-timer-type {
+    font-size: 0.7rem;
+    width: 80px;
+    margin: 5px 2px;
+  }
+
+  .timer-control-buttons {
+    width: 35px;
+    margin: auto 20px;
+  }
 }
