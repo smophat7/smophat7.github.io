@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/time.png">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand navbar-custom">
+    <a class="navbar-brand" href="index.html">Pomodoro Timer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="about-pomodoro-container">
+    <h1>About the Pomodoro Technique</h1>
+    <p class="about-content">The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts. Learn more at the <a href="https://francescocirillo.com/pages/pomodoro-technique">official site.</a></p>
+
+    <a class="about-titles" data-toggle="collapse" href="#technique-content"><h3>The Technique</h3></a>
+    <div class="collapse" id="technique-content">
+      <p class="about-content">There are six steps in the original technique:</p>
+      <ol>
+        <li>Decide on the task to be done</li>
+        <li>Set the pomodoro timer</li>
+        <li>Work on the task</li>
+        <li>End work when the timer rings and put a checkmark on a piece of paper</li>
+        <li>If you have few than four checkmarks, take a short break</li>
+        <li>After four pomoodoros, take a longer break before repeating the steps</li>
+      </ol>
+      <p class="about-content">For the purposes of the technique, a <em>pomodoro</em> is the interval of time spent working.</p>
+      <p class="credit-links">Source: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia.org</a></p>
+    </div>
+
+    <a class="about-titles" data-toggle="collapse" href="#how-to-content"><h3>How To</h3></a>
+    <div class="collapse" id="how-to-content">
+      <p class="about-content">A goal of the technique is to reduce the impact of internal and external interruptions on focus and flow. A pomodoro is indivisible; when interrupted during a pomodoro, either the other activity must be recorded and postponed (using the <em>inform</em> – <em>negotiate</em> – <em>schedule</em> – <em>call back</em> strategy) or the pomodoro must be abandoned.</p>
+      <p class="about-content">After task completion in a pomodoro, any time remaining could be devoted to activities such as:</p>
+      <ul>
+        <li>Review and edit the work that you just completed</li>
+        <li>Review the activities from a learning point of view - what did I learn? What could I do better or differently?</li>
+        <li>Review the list of upcoming tasks for the next planned pomodoro time blocks, and start reflecting on or updating those tasks</li>
+      </ul>
+      <p class="about-content">Cirillo suggests: "Specific cases should be handled with common sense: If you finish a task while the Pomodoro is still ticking, the following rule applies: If a Pomodoro begins, it has to ring. It’s a good idea to take advantage of the opportunity for overlearning, using the remaining portion of the Pomodoro to review or repeat what you’ve done, make small improvements, and note what you’ve learned until the Pomodoro rings."</p>
+      <p class="about-content">The stages of planning, tracking, recording, processing and visualizing are fundamental to the technique. In the planning phase, tasks are prioritized by recording them in a "To Do Today" list. This enables users to estimate the effort tasks require. As pomodoros are completed, they are recorded, adding to a sense of accomplishment and providing raw data for subsequent self-observation and improvement.</p>
+      <p class="credit-links">Source: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia.org</a></p>
+    </div>
+
+    <a class="about-titles" data-toggle="collapse" href="#variations-content"><h3>Variations</h3></a>
+    <div class="collapse" id="variations-content">
+      <p class="about-content">There are many variations on the Pomodoro Technique. These allow individuals to tailor the principles of the Pomodoro Technique to better suit their personal working style. Some variations include:</p>
+      <ul>
+        <li><b>Work in 90 minute time periods:</b> Rather than a 25 minute focus period, work in 90 minute blocks. This reflects a natural concentration cycle.</li>
+        <li><b>Work in natural time periods:</b> There may be natural time markers in your life - for example the period between meetings, or the time until your kids or partner come home, or the time until the dishwasher finishes. Use these to define focus periods.</li>
+        <li><b>Flowtime:</b> Monitor your natural productivity periods, and from this data work out the best productivity system for yourself.</li>
+      </ul>
+      <p class="about-content">All of these approaches preserve the core Pomodoro Technique principle of working in specific time blocks - but they adjust the periods to better suit individual needs.</p>
+      <p class="credit-links">Source: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia.org</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Source: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia.org</a></p>
+    <p>Copyright © 2020 Spencer Moffat</p>
+    <p>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

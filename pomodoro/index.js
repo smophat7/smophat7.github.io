@@ -68,6 +68,31 @@ $("#reset-button").click(function() {
   $("#start-button").fadeIn();
 });
 
+// Timer Controls Stylization
+$("#start-button").hover(
+  function() {
+    $("#start-button").attr("src", "images/play-light-grey.svg")
+  }, function() {
+    $("#start-button").attr("src", "images/play-almost-white.svg");
+  }
+);
+
+$("#stop-button").hover(
+  function() {
+    $("#stop-button").attr("src", "images/pause-light-grey.svg")
+  }, function() {
+    $("#stop-button").attr("src", "images/pause-almost-white.svg");
+  }
+);
+
+$("#reset-button").hover(
+  function() {
+    $("#reset-button").attr("src", "images/reset-light-grey.svg")
+  }, function() {
+    $("#reset-button").attr("src", "images/reset-almost-white.svg");
+  }
+);
+
 
 // Changing Timer Types and Resetting Clocks
 function updateTimerType(newType) {

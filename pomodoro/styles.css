@@ -19,6 +19,10 @@ footer {
   margin-top: 150px;
 }
 
+footer > p {
+  margin-bottom: 0;
+}
+
 
 /******************** Class Selectors ********************/
 
@@ -43,7 +47,7 @@ footer {
 }
 
 
-/* Everything Else */
+/* Timer Page */
 .timer-type {
   margin-bottom: 0;
 }
@@ -56,7 +60,7 @@ footer {
 .timer-control-buttons-container {
   width: 250px;
   height: 50px;
-  margin: 0 auto 0;
+  margin: 0 auto 10px;
 }
 
 .timer-control-buttons {
@@ -90,6 +94,40 @@ footer {
   background-color: var(--secondary-bg-color);
   border-color: var(--secondary-bg-color);
   color: var(--main-text-color);
+}
+
+/* About Page */
+.about-pomodoro-container {
+  text-align: left;
+  width: 75%;
+  margin: auto;
+  line-height: 2;
+}
+
+a.about-titles {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.about-titles:hover {
+  color: var(--secondary-text-color);
+}
+
+.collapsing {
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+
+.about-pomodoro-container h3 {
+  margin: 30px 0 0;
+}
+
+.about-content {
+  margin: 20px 0 0;
+}
+
+.credit-links {
+  margin: 10px 0;
 }
 
 
