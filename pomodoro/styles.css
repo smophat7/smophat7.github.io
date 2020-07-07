@@ -96,6 +96,10 @@ footer > p {
   color: var(--main-text-color);
 }
 
+#progress-message {
+  margin: 10px auto 0;
+}
+
 /* About Page */
 .about-pomodoro-container {
   text-align: left;

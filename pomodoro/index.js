@@ -1,25 +1,24 @@
 // NOTE TO SELF:
-  //Reduce the "Timer Type Controls" buttons into one loop (like in the memory game)? Not sure if that would work
-  // Make it so that the stop and reset buttons do something, style them later.
-  // Have some larger counts going to display overall session progress (how many pomodoros until
-    // the big break, for example) and to be able to shift between the three different timer types
-  // Use different images for the start and stop buttons and only have some visible when needed (animate in an out of frame)
+  // Reduce the "Timer Type Controls" buttons into one loop (like in the memory game)? Not sure if that would work
+  // Test if the numPomodorosCompleted variable is updating and displaying properly
+  // Add settings page/drop-down
+
 
 
 
 // Default timer settings than can be changed by the user
-
-// Variable initialization
 var timeTypes = {
   pomodoro: 25,           // Default should be 25 minutes
   shortBreak: 5,
   longBreak: 15
 };
+
+// Variable initialization
 var currentTimerSetting = "pomodoro";     // Default Timer Type setting upon pageload
 var timerMins = timeTypes[currentTimerSetting];
 var timerSecs = timerMins * 60;
 var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on $(#start-button).click()
-
+var numPomodorosCompleted = 0;
 
 // Timer Type Controls
 $("#pomodoro-button").click(function() {
@@ -57,6 +56,7 @@ $("#long-break-button").click(function() {
 $("#start-button").click(function() {
   timerRunning = setInterval("Decrement()", 1000);
   updateTimerType(currentTimerSetting);
+  updateProgressMessage(numPomodorosCompleted);
   $("#start-button").hide();
   $("#stop-button").fadeIn();
   $("#reset-button").fadeIn();
@@ -76,6 +76,7 @@ $("#reset-button").click(function() {
   $("#reset-button").hide();
   $("#start-button").fadeIn();
 });
+
 
 // Timer Controls Stylization
 $("#start-button").hover(
@@ -127,6 +128,12 @@ function updateTimeValues() {
   $(".seconds").text(getSeconds());
 }
 
+function updateProgressMessage() {
+  progressMessageText = (4 - numPomodorosCompleted) + " pomodoros until long break."
+  $("#progress-message").text(progressMessageText);
+}
+
+
 // Countdown Functionality
 function Decrement() {
   timerSecs--;
@@ -135,6 +142,24 @@ function Decrement() {
   if (timerSecs === 0) {
     clearInterval(timerRunning);
     $(".timer-type").text("Time's Up!")
+    setTimeout(function() {
+      if (currentTimerSetting === "pomodoro") {
+        numPomodorosCompleted += 1;
+        if (numPomodorosCompleted < 4) {
+          updateTimerType("shortBreak");
+        }
+        else {
+          updateTimerType("longBreak");
+          numPomodorosCompleted = 0;
+        }
+      }
+      else {
+        updateTimerType("pomodoro");
+      }
+    }, 2000);
+    $("#stop-button").hide();
+    $("#reset-button").hide();
+    $("#start-button").fadeIn();
   }
 }
 
