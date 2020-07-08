@@ -46,6 +46,13 @@ footer > p {
   color: var(--secondary-text-color);
 }
 
+.dropdown-menu {
+  min-width: 320px;
+}
+
+.save-button {
+  margin-top: 16px;
+}
 
 /* Timer Page */
 .timer-type {

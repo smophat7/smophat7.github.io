@@ -10,7 +10,8 @@
 var timeTypes = {
   pomodoro: 25,           // Default should be 25 minutes
   shortBreak: 5,
-  longBreak: 15
+  longBreak: 15,
+  numPomodorosPerLongBreak: 4
 };
 
 // Variable initialization
@@ -19,6 +20,17 @@ var timerMins = timeTypes[currentTimerSetting];
 var timerSecs = timerMins * 60;
 var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on $(#start-button).click()
 var numPomodorosCompleted = 0;
+
+// User Settings
+$(".save-button").click(function() {
+  event.preventDefault();           //Prevent page from reloading
+  timeTypes["pomodoro"] = $("#pomodoroLength").val();
+  timeTypes["shortBreak"] = $("#shortBreakLength").val();
+  timeTypes["longBreak"] = $("#longBreakLength").val();
+  timeTypes["numPomodorosPerLongBreak"] = $("#numPomodoroSetting").val();
+  updateTimeValues();
+});
+
 
 // Timer Type Controls
 $("#pomodoro-button").click(function() {
@@ -129,7 +141,7 @@ function updateTimeValues() {
 }
 
 function updateProgressMessage() {
-  progressMessageText = (4 - numPomodorosCompleted) + " pomodoros until long break."
+  progressMessageText = (timeTypes["numPomodorosPerLongBreak"] - numPomodorosCompleted) + " pomodoros until long break."
   $("#progress-message").text(progressMessageText);
 }
 
@@ -145,7 +157,7 @@ function Decrement() {
     setTimeout(function() {
       if (currentTimerSetting === "pomodoro") {
         numPomodorosCompleted += 1;
-        if (numPomodorosCompleted < 4) {
+        if (numPomodorosCompleted < timeTypes["numPomodorosPerLongBreak"]) {
           updateTimerType("shortBreak");
         }
         else {
