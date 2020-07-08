@@ -24,11 +24,13 @@ $( document ).ready(function() {
     document.documentElement.setAttribute("theme", "light");
   }
   // Load timer types and values saved from previous sessions
-  timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
-  timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
-  timeTypes["longBreak"] = localStorage.getItem("longBreak");
-  timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
-  updateTimeValues();
+  if (localStorage.getItem("pomodoro") != null) {
+    timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
+    timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
+    timeTypes["longBreak"] = localStorage.getItem("longBreak");
+    timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
+    updateTimeValues();
+  }
 });
 
 // Default timer settings than can be changed by the user
