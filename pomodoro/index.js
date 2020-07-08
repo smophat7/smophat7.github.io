@@ -1,10 +1,35 @@
-// NOTE TO SELF:
-  // Reduce the "Timer Type Controls" buttons into one loop (like in the memory game)? Not sure if that would work
+// NOTES TO SELF:
+  // Reduce the initialization of "Timer Type Controls" buttons into one loop (like in the memory game)?
+    // Not sure if that would work
   // Test if the numPomodorosCompleted variable is updating and displaying properly
-  // Add settings page/drop-down
+  // Animate color transitions (could fade out whole page and make it come back a different color over like 1 second)
+  // Alarm sound (change sounds in settings)
+  // Add a reset to default setting
+  // See the timer updating in the tab image or text as well
+  // Send notifications from the browser, or at least an alert
+  // Theming problem:
+    // Theme selection doesn't persist across pages or when page reloads
+    // Radio selection stays across page load, so it doesn't always match then
+  // Time lage issue (about 3 seconds every 5 minutes)
+  // Eventually:
+    // Add note taking section where you can write and check off your to-do list
+
+  //To-Do: refactor and organize all of this, there are definitely some new functions to be made
 
 
-
+// ON PAGE LOAD
+$( document ).ready(function() {
+  // Set Light Theme if that was stored in previous sessions
+  if (localStorage.getItem("lightTheme")) {
+    document.documentElement.setAttribute("theme", "light");
+  }
+  // Load timer types and values saved from previous sessions
+  timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
+  timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
+  timeTypes["longBreak"] = localStorage.getItem("longBreak");
+  timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
+  updateTimeValues();
+});
 
 // Default timer settings than can be changed by the user
 var timeTypes = {
@@ -23,12 +48,30 @@ var numPomodorosCompleted = 0;
 
 // User Settings
 $(".save-button").click(function() {
-  event.preventDefault();           //Prevent page from reloading
-  timeTypes["pomodoro"] = $("#pomodoroLength").val();
-  timeTypes["shortBreak"] = $("#shortBreakLength").val();
-  timeTypes["longBreak"] = $("#longBreakLength").val();
-  timeTypes["numPomodorosPerLongBreak"] = $("#numPomodoroSetting").val();
+  event.preventDefault();           //Prevent page from reloading on "save"
+  var userPomodoroLength = $("#pomodoroLength").val();
+  timeTypes["pomodoro"] = userPomodoroLength;
+  var userShortBreakLength = $("#shortBreakLength").val();
+  timeTypes["shortBreak"] = userShortBreakLength;
+  var userLongBreakLength = $("#longBreakLength").val();
+  timeTypes["longBreak"] = userLongBreakLength;
+  var userNumPomodoroSetting = $("#numPomodoroSetting").val();
+  timeTypes["numPomodorosPerLongBreak"] = userNumPomodoroSetting;
   updateTimeValues();
+  // Save settings to local storage
+  localStorage.setItem("pomodoro", userPomodoroLength);
+  localStorage.setItem("shortBreak", userShortBreakLength);
+  localStorage.setItem("longBreak", userLongBreakLength);
+  localStorage.setItem("numPomodoros", userNumPomodoroSetting);
+  // Theming options
+  if ($("input[name='theme']:checked").val() === "darkModeValue") {
+    document.documentElement.removeAttribute("theme");
+    localStorage.removeItem("lightTheme");
+  }
+  else if ($("input[name='theme']:checked").val() === "lightModeValue") {
+    document.documentElement.setAttribute("theme", "light");
+    localStorage.setItem("lightTheme", "true");
+  }
 });
 
 

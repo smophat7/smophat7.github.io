@@ -6,6 +6,12 @@
   --secondary-text-color: #84A9AC;
 }
 
+:root[theme="light"] {
+  --main-bg-color: #EEEEEE;
+  --secondary-bg-color: #32E0C4;
+  --main-text-color: #393E46;
+  --secondary-text-color: #222831;
+}
 
 /******************** Tag Selectors ********************/
 
