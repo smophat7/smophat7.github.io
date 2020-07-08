@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pomodoro Timer</title>
+  <title>Pomodoro Timer - About</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/time.png">
@@ -12,7 +12,7 @@
 
 <body>
   <nav class="navbar navbar-expand navbar-custom">
-    <a class="navbar-brand" href="index.html">Pomodoro Timer</a>
+    <a class="navbar-brand" href="#">Pomodoro Timer</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,11 +20,50 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Settings
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <form class="px-4 py-3">
+              <h4>Settings</h4>
+              <div class="form-group row">
+                <label for="pomodoroLength" class="col-sm-8 col-form-label">Pomodoro Length</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" id="pomodoroLength" value="25">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="shortBreakLength" class="col-sm-8 col-form-label">Short Break Length</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" id="shortBreakLength" value="5">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="longBreakLength" class="col-sm-8 col-form-label">Long Break Length</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" id="longBreakLength" value="15">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="numPomodoroSetting" class="col-sm-8 col-form-label">Pomodoros per Long Break</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" id="numPomodoroSetting" value="4">
+                </div>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input theme-option" type="radio" name="theme" id="darkModeOption" value="darkModeValue" checked>
+                <label class="form-check-label" for="darkModeOption">Dark Mode</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input theme-option" type="radio" name="theme" id="lightModeOption" value="lightModeValue">
+                <label class="form-check-label" for="lightModeOption">Light Mode</label>
+              </div>
+              <button type="button" class="btn btn-primary save-button">Save</button>       <!-- this does something weird -->
+            </form>
+          </div>
       </ul>
     </div>
   </nav>

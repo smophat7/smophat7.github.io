@@ -8,8 +8,7 @@
   // See the timer updating in the tab image or text as well
   // Send notifications from the browser, or at least an alert
   // Theming problem:
-    // Theme selection doesn't persist across pages or when page reloads
-    // Radio selection stays across page load, so it doesn't always match then
+    // Radio selection (theme) doeesn't always match theme across new sessions where theme is retained
   // Time lage issue (about 3 seconds every 5 minutes)
   // Eventually:
     // Add note taking section where you can write and check off your to-do list
