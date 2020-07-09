@@ -6,11 +6,14 @@
   // Alarm sound (change sounds in settings)
   // Add a reset to default setting
   // See the timer updating in the tab image or text as well
+  // Saving settings resets the times, which is good except that it ruins your progress in a pomdoro. (currently doesn't stop the clock - good)
+  // Retain number of pomodoros completed when you go to the about page and background
   // Send notifications from the browser, or at least an alert
   // Theming problem:
     // Radio selection (theme) doeesn't always match theme across new sessions where theme is retained
   // Time lage issue (about 3 seconds every 5 minutes)
   // Eventually:
+    // Keep timer going in the background or in a pop-up when it runs and you go to the about page (or just open new tab for now - quick fix)
     // Add note taking section where you can write and check off your to-do list
 
   //To-Do: refactor and organize all of this, there are definitely some new functions to be made
@@ -28,6 +31,10 @@ $( document ).ready(function() {
     timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
     timeTypes["longBreak"] = localStorage.getItem("longBreak");
     timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
+    $("#pomodoroLength").attr("value", localStorage.getItem("pomodoro"));
+    $("#shortBreakLength").attr("value", localStorage.getItem("shortBreak"));
+    $("#longBreakLength").attr("value", localStorage.getItem("longBreak"));
+    $("#numPomodoroSetting").attr("value", localStorage.getItem("numPomodoros"));
     updateTimeValues();
   }
 });
