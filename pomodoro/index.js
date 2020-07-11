@@ -1,7 +1,6 @@
 // NOTES TO SELF:
   // Reduce the initialization of "Timer Type Controls" buttons into one loop (like in the memory game)?
     // Not sure if that would work
-  // Test if the numPomodorosCompleted variable is updating and displaying properly
   // Animate color transitions (could fade out whole page and make it come back a different color over like 1 second)
   // Alarm sound (change sounds in settings)
   // Add a reset to default setting
@@ -9,8 +8,6 @@
   // Saving settings resets the times, which is good except that it ruins your progress in a pomdoro. (currently doesn't stop the clock - good)
   // Retain number of pomodoros completed when you go to the about page and background
   // Send notifications from the browser, or at least an alert
-  // Theming problem:
-    // Radio selection (theme) doeesn't always match theme across new sessions where theme is retained
   // Time lage issue (about 3 seconds every 5 minutes)
   // Eventually:
     // Keep timer going in the background or in a pop-up when it runs and you go to the about page (or just open new tab for now - quick fix)
@@ -19,25 +16,6 @@
   //To-Do: refactor and organize all of this, there are definitely some new functions to be made
 
 
-// ON PAGE LOAD
-$( document ).ready(function() {
-  // Set Light Theme if that was stored in previous sessions
-  if (localStorage.getItem("lightTheme")) {
-    document.documentElement.setAttribute("theme", "light");
-  }
-  // Load timer types and values saved from previous sessions
-  if (localStorage.getItem("pomodoro") != null) {
-    timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
-    timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
-    timeTypes["longBreak"] = localStorage.getItem("longBreak");
-    timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
-    $("#pomodoroLength").attr("value", localStorage.getItem("pomodoro"));
-    $("#shortBreakLength").attr("value", localStorage.getItem("shortBreak"));
-    $("#longBreakLength").attr("value", localStorage.getItem("longBreak"));
-    $("#numPomodoroSetting").attr("value", localStorage.getItem("numPomodoros"));
-    updateTimeValues();
-  }
-});
 
 // Default timer settings than can be changed by the user
 var timeTypes = {
@@ -53,6 +31,29 @@ var timerMins = timeTypes[currentTimerSetting];
 var timerSecs = timerMins * 60;
 var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on $(#start-button).click()
 var numPomodorosCompleted = 0;
+var themeMode = "dark"
+
+// ON PAGE LOAD
+$( document ).ready(function() {
+  // Set Light Theme if that was stored in previous sessions
+  if (localStorage.getItem("lightTheme")) {
+    document.documentElement.setAttribute("theme", "light");
+    themeMode = "light";
+    $("#lightModeOption").prop("checked", true);
+  }
+  // Load timer types and values saved from previous sessions
+  if (localStorage.getItem("pomodoro") != null) {
+    timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
+    timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
+    timeTypes["longBreak"] = localStorage.getItem("longBreak");
+    timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
+    $("#pomodoroLength").attr("value", localStorage.getItem("pomodoro"));
+    $("#shortBreakLength").attr("value", localStorage.getItem("shortBreak"));
+    $("#longBreakLength").attr("value", localStorage.getItem("longBreak"));
+    $("#numPomodoroSetting").attr("value", localStorage.getItem("numPomodoros"));
+    updateTimeValues();
+  }
+});
 
 // User Settings
 $(".save-button").click(function() {
@@ -75,10 +76,12 @@ $(".save-button").click(function() {
   if ($("input[name='theme']:checked").val() === "darkModeValue") {
     document.documentElement.removeAttribute("theme");
     localStorage.removeItem("lightTheme");
+    themeMode = "dark"
   }
   else if ($("input[name='theme']:checked").val() === "lightModeValue") {
     document.documentElement.setAttribute("theme", "light");
     localStorage.setItem("lightTheme", "true");
+    themeMode = "light"
   }
 });
 
@@ -117,6 +120,20 @@ $("#long-break-button").click(function() {
 
 // Timer Playing Controls
 $("#start-button").click(function() {
+  // Ask for user's notification preferences if necessary
+  // if (!window.Notification) {
+  //       console.log("Browser does not support notifications.");
+  //   }
+  // else {
+  //   if (Notification.permission === "default") {
+  //     Notification.requestPermission().then(function(p) {
+  //       if (p === "denied") {
+  //         console.log("User blocked notifications.");
+  //       }
+  //     });
+  //   }
+  // }
+  // Button functionality
   timerRunning = setInterval("Decrement()", 1000);
   updateTimerType(currentTimerSetting);
   updateProgressMessage(numPomodorosCompleted);
@@ -204,10 +221,23 @@ function Decrement() {
   $(".seconds").text(getSeconds());
   if (timerSecs === 0) {
     clearInterval(timerRunning);
+    console.log(Notification.permission)                      //delete me
+    if (Notification.permission === "granted") {
+      console.log("Attempting to show notification.");
+      var notify = new Notification('Hi there!', {
+        body: 'How are you doing?',
+        icon: 'https://bit.ly/2DYqRrh',
+      });
+      // var notify = new Notification("Time's Up!", {
+      //   body: "Keep up the great work!",
+      //   icon: "images/time.png",
+      // });
+    }
     $(".timer-type").text("Time's Up!")
     setTimeout(function() {
       if (currentTimerSetting === "pomodoro") {
         numPomodorosCompleted += 1;
+        updateProgressMessage(numPomodorosCompleted);
         if (numPomodorosCompleted < timeTypes["numPomodorosPerLongBreak"]) {
           updateTimerType("shortBreak");
         }
