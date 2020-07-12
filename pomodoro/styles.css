@@ -19,6 +19,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   text-align: center;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 footer {
@@ -59,6 +60,17 @@ footer > p {
 .save-button {
   margin-top: 16px;
 }
+
+/* Footer */
+.icon-credit {
+  font-size: 0.6rem;
+}
+
+.icon-credit a {
+  text-decoration: none;
+  color: var(--main-text-color)
+}
+
 
 /* Timer Page */
 .timer-type {
