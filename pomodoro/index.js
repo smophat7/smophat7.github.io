@@ -19,7 +19,7 @@
 
 // Default timer settings than can be changed by the user
 var timeTypes = {
-  pomodoro: 25,           // Default should be 25 minutes
+  pomodoro: 25,
   shortBreak: 5,
   longBreak: 15,
   numPomodorosPerLongBreak: 4
@@ -31,15 +31,21 @@ var timerMins = timeTypes[currentTimerSetting];
 var timerSecs = timerMins * 60;
 var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on $(#start-button).click()
 var numPomodorosCompleted = 0;
-var themeMode = "dark"
+var themeMode = "dark";
 
 // ON PAGE LOAD
-$( document ).ready(function() {
+$(document).ready(function() {
   // Set Light Theme if that was stored in previous sessions
   if (localStorage.getItem("lightTheme")) {
     document.documentElement.setAttribute("theme", "light");
     themeMode = "light";
+    // Check the correct radio option in settings
     $("#lightModeOption").prop("checked", true);
+    // Change timer control button colors
+    $("#start-button").attr("src", "images/play-dark-grey.svg");
+    $("#stop-button").attr("src", "images/pause-dark-grey.svg");
+    $("#reset-button").attr("src", "images/reset-dark-grey.svg");
+
   }
   // Load timer types and values saved from previous sessions
   if (localStorage.getItem("pomodoro") != null) {
@@ -76,12 +82,20 @@ $(".save-button").click(function() {
   if ($("input[name='theme']:checked").val() === "darkModeValue") {
     document.documentElement.removeAttribute("theme");
     localStorage.removeItem("lightTheme");
-    themeMode = "dark"
+    themeMode = "dark";
+    // Change timer control button colors
+    $("#start-button").attr("src", "images/play-almost-white.svg");
+    $("#stop-button").attr("src", "images/pause-almost-white.svg");
+    $("#reset-button").attr("src", "images/reset-almost-white.svg");
   }
   else if ($("input[name='theme']:checked").val() === "lightModeValue") {
     document.documentElement.setAttribute("theme", "light");
     localStorage.setItem("lightTheme", "true");
-    themeMode = "light"
+    themeMode = "light";
+    // Change timer control button colors
+    $("#start-button").attr("src", "images/play-dark-grey.svg");
+    $("#stop-button").attr("src", "images/pause-dark-grey.svg");
+    $("#reset-button").attr("src", "images/reset-dark-grey.svg");
   }
 });
 
@@ -163,7 +177,12 @@ $("#start-button").hover(
   function() {
     $("#start-button").attr("src", "images/play-light-grey.svg")
   }, function() {
-    $("#start-button").attr("src", "images/play-almost-white.svg");
+    if (themeMode === "dark") {
+      $("#start-button").attr("src", "images/play-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#start-button").attr("src", "images/play-dark-grey.svg");
+    }
   }
 );
 
@@ -171,7 +190,12 @@ $("#stop-button").hover(
   function() {
     $("#stop-button").attr("src", "images/pause-light-grey.svg")
   }, function() {
-    $("#stop-button").attr("src", "images/pause-almost-white.svg");
+    if (themeMode === "dark") {
+      $("#stop-button").attr("src", "images/pause-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#stop-button").attr("src", "images/pause-dark-grey.svg");
+    }
   }
 );
 
@@ -179,10 +203,14 @@ $("#reset-button").hover(
   function() {
     $("#reset-button").attr("src", "images/reset-light-grey.svg")
   }, function() {
-    $("#reset-button").attr("src", "images/reset-almost-white.svg");
+    if (themeMode === "dark") {
+      $("#reset-button").attr("src", "images/reset-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#reset-button").attr("src", "images/reset-dark-grey.svg");
+    }
   }
 );
-
 
 // Changing Timer Types and Resetting Clocks
 function updateTimerType(newType) {
@@ -221,18 +249,19 @@ function Decrement() {
   $(".seconds").text(getSeconds());
   if (timerSecs === 0) {
     clearInterval(timerRunning);
-    console.log(Notification.permission)                      //delete me
-    if (Notification.permission === "granted") {
-      console.log("Attempting to show notification.");
-      var notify = new Notification('Hi there!', {
-        body: 'How are you doing?',
-        icon: 'https://bit.ly/2DYqRrh',
-      });
-      // var notify = new Notification("Time's Up!", {
-      //   body: "Keep up the great work!",
-      //   icon: "images/time.png",
-      // });
-    }
+    // console.log(Notification.permission)                      //delete me
+    // if (Notification.permission === "granted") {
+    //   console.log("Attempting to show notification.");
+    //   var notify = new Notification('Hi there!', {
+    //     body: 'How are you doing?',
+    //     icon: 'https://bit.ly/2DYqRrh',
+    //   });
+    //
+    //   // var notify = new Notification("Time's Up!", {
+    //   //   body: "Keep up the great work!",
+    //   //   icon: "images/time.png",
+    //   // });
+    // }
     $(".timer-type").text("Time's Up!")
     setTimeout(function() {
       if (currentTimerSetting === "pomodoro") {
