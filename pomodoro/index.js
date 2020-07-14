@@ -33,36 +33,44 @@ var timerRunning = {};    // will be held by setInterval("Decrement()", 1000) on
 var numPomodorosCompleted = 0;
 var themeMode = "dark";
 
-// ON PAGE LOAD
+
+
+////////// Theme Settings and Stylization//////////
+
+// On page load - Set page settings if user has saved those in previous sessions
 $(document).ready(function() {
   // Set Light Theme if that was stored in previous sessions
   if (localStorage.getItem("lightTheme")) {
     document.documentElement.setAttribute("theme", "light");
     themeMode = "light";
-    // Check the correct radio option in settings
+    // Fill the correct radio option in settings menu (default is Dark Mode)
     $("#lightModeOption").prop("checked", true);
-    // Change timer control button colors
+    // Change timer control button colors for light theme
     $("#start-button").attr("src", "images/play-dark-grey.svg");
     $("#stop-button").attr("src", "images/pause-dark-grey.svg");
     $("#reset-button").attr("src", "images/reset-dark-grey.svg");
   }
   // Load timer types and values saved from previous sessions
   if (localStorage.getItem("pomodoro") != null) {
+    // Change values in timeTypes object
     timeTypes["pomodoro"] = localStorage.getItem("pomodoro");
     timeTypes["shortBreak"] = localStorage.getItem("shortBreak");
     timeTypes["longBreak"] = localStorage.getItem("longBreak");
     timeTypes["numPomodorosPerLongBreak"] = localStorage.getItem("numPomodoros");
+    // Change values displayed in settings menu
     $("#pomodoroLength").attr("value", localStorage.getItem("pomodoro"));
     $("#shortBreakLength").attr("value", localStorage.getItem("shortBreak"));
     $("#longBreakLength").attr("value", localStorage.getItem("longBreak"));
     $("#numPomodoroSetting").attr("value", localStorage.getItem("numPomodoros"));
+    // Show correct times on clocks
     updateTimeValues();
   }
 });
 
-// User Settings
+// User Settings Menu
 $(".save-button").click(function() {
-  event.preventDefault();           //Prevent page from reloading on "save"
+  event.preventDefault();           //Prevent page from reloading on "save" click
+  // Set timeTypes values based on user setting selection
   var userPomodoroLength = $("#pomodoroLength").val();
   timeTypes["pomodoro"] = userPomodoroLength;
   var userShortBreakLength = $("#shortBreakLength").val();
@@ -71,6 +79,7 @@ $(".save-button").click(function() {
   timeTypes["longBreak"] = userLongBreakLength;
   var userNumPomodoroSetting = $("#numPomodoroSetting").val();
   timeTypes["numPomodorosPerLongBreak"] = userNumPomodoroSetting;
+  // Display correc times
   updateTimeValues();
   // Save settings to local storage
   localStorage.setItem("pomodoro", userPomodoroLength);
@@ -98,12 +107,77 @@ $(".save-button").click(function() {
   }
 });
 
+// Timer Controls Stylization - Theme Based
+$("#start-button").hover(
+  // Mouse on
+  function() {
+    if (themeMode === "dark") {
+      $("#start-button").attr("src", "images/play-light-grey.svg")
+    }
+    else if (themeMode === "light") {
+      $("#start-button").attr("src", "images/play-light-teal.svg")
+    }
+  },
+  // Mouse off
+  function() {
+    if (themeMode === "dark") {
+      $("#start-button").attr("src", "images/play-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#start-button").attr("src", "images/play-dark-grey.svg");
+    }
+  }
+);
+$("#stop-button").hover(
+  // Mouse on
+  function() {
+    if (themeMode === "dark") {
+      $("#stop-button").attr("src", "images/pause-light-grey.svg")
+    }
+    else if (themeMode === "light") {
+      $("#stop-button").attr("src", "images/pause-light-teal.svg")
+    }
+  },
+  // Mouse off
+  function() {
+    if (themeMode === "dark") {
+      $("#stop-button").attr("src", "images/pause-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#stop-button").attr("src", "images/pause-dark-grey.svg");
+    }
+  }
+);
+$("#reset-button").hover(
+  // Mouse on
+  function() {
+    if (themeMode === "dark") {
+      $("#reset-button").attr("src", "images/reset-light-grey.svg")
+    }
+    else if (themeMode === "light") {
+      $("#reset-button").attr("src", "images/reset-light-teal.svg")
+    }
+  },
+  // Mouse off
+  function() {
+    if (themeMode === "dark") {
+      $("#reset-button").attr("src", "images/reset-almost-white.svg");
+    }
+    else if (themeMode === "light") {
+      $("#reset-button").attr("src", "images/reset-dark-grey.svg");
+    }
+  }
+);
 
-// Timer Type Controls
+
+
+////////// Timer Type Controls (Pomodoro, Short Break, Long Break) //////////
+
 $("#pomodoro-button").click(function() {
   if (currentTimerSetting != "pomodoro") {
     updateTimerType("pomodoro");
     clearInterval(timerRunning);
+    // Show correct buttons
     $("#stop-button").hide();
     $("#reset-button").hide();
     $("#start-button").fadeIn();
@@ -114,6 +188,7 @@ $("#short-break-button").click(function() {
   if (currentTimerSetting != "shortBreak") {
     updateTimerType("shortBreak");
     clearInterval(timerRunning);
+    // Show correct buttons
     $("#stop-button").hide();
     $("#reset-button").hide();
     $("#start-button").fadeIn();
@@ -124,6 +199,7 @@ $("#long-break-button").click(function() {
   if (currentTimerSetting != "longBreak") {
     updateTimerType("longBreak");
     clearInterval(timerRunning);
+    // Show correct buttons
     $("#stop-button").hide();
     $("#reset-button").hide();
     $("#start-button").fadeIn();
@@ -131,25 +207,15 @@ $("#long-break-button").click(function() {
 });
 
 
-// Timer Playing Controls
+
+////////// Timer Button Controls //////////
+
 $("#start-button").click(function() {
-  // Ask for user's notification preferences if necessary
-  // if (!window.Notification) {
-  //       console.log("Browser does not support notifications.");
-  //   }
-  // else {
-  //   if (Notification.permission === "default") {
-  //     Notification.requestPermission().then(function(p) {
-  //       if (p === "denied") {
-  //         console.log("User blocked notifications.");
-  //       }
-  //     });
-  //   }
-  // }
   // Button functionality
   timerRunning = setInterval("Decrement()", 1000);
   updateTimerType(currentTimerSetting);
   updateProgressMessage(numPomodorosCompleted);
+  // Show correct buttons
   $("#start-button").hide();
   $("#stop-button").fadeIn();
   $("#reset-button").fadeIn();
@@ -157,6 +223,7 @@ $("#start-button").click(function() {
 
 $("#stop-button").click(function() {
   clearInterval(timerRunning);
+  // Show correct buttons
   $("#stop-button").hide();
   $("#start-button").fadeIn();
 });
@@ -165,58 +232,24 @@ $("#reset-button").click(function() {
   clearInterval(timerRunning);
   updateTimeValues();
   updateTimerType(currentTimerSetting);
+  // Show correct buttons
   $("#stop-button").hide();
   $("#reset-button").hide();
   $("#start-button").fadeIn();
 });
 
 
-// Timer Controls Stylization
-$("#start-button").hover(
-  function() {
-    $("#start-button").attr("src", "images/play-light-grey.svg")
-  }, function() {
-    if (themeMode === "dark") {
-      $("#start-button").attr("src", "images/play-almost-white.svg");
-    }
-    else if (themeMode === "light") {
-      $("#start-button").attr("src", "images/play-dark-grey.svg");
-    }
-  }
-);
 
-$("#stop-button").hover(
-  function() {
-    $("#stop-button").attr("src", "images/pause-light-grey.svg")
-  }, function() {
-    if (themeMode === "dark") {
-      $("#stop-button").attr("src", "images/pause-almost-white.svg");
-    }
-    else if (themeMode === "light") {
-      $("#stop-button").attr("src", "images/pause-dark-grey.svg");
-    }
-  }
-);
+////////// Changing Timer Types and Resetting Clocks //////////
 
-$("#reset-button").hover(
-  function() {
-    $("#reset-button").attr("src", "images/reset-light-grey.svg")
-  }, function() {
-    if (themeMode === "dark") {
-      $("#reset-button").attr("src", "images/reset-almost-white.svg");
-    }
-    else if (themeMode === "light") {
-      $("#reset-button").attr("src", "images/reset-dark-grey.svg");
-    }
-  }
-);
-
-// Changing Timer Types and Resetting Clocks
+// Change timerType valuable and header text accordingly
 function updateTimerType(newType) {
+  // Only update things if user clicks on a different timer type
   if (currentTimerSetting != newType) {
     currentTimerSetting = newType;
     updateTimeValues();
   }
+  // Change displayed text accordingly
   if (newType === "pomodoro") {
     $(".timer-type").text("Pomodoro");
   }
@@ -228,6 +261,7 @@ function updateTimerType(newType) {
   }
 }
 
+// Change time variable values and change text accordingly
 function updateTimeValues() {
   timerMins = timeTypes[currentTimerSetting];
   timerSecs = timerMins * 60;
@@ -235,35 +269,30 @@ function updateTimeValues() {
   $(".seconds").text(getSeconds());
 }
 
+// Change the progress message at the bottom
 function updateProgressMessage() {
   progressMessageText = (timeTypes["numPomodorosPerLongBreak"] - numPomodorosCompleted) + " pomodoros until long break."
   $("#progress-message").text(progressMessageText);
 }
 
 
-// Countdown Functionality
+
+////////// Countdown Functionality //////////
+
+// Function is executed every 1 second when the timer is running
 function Decrement() {
   timerSecs--;
+  // Update minute/second values
   $(".minutes").text(getMinutes());
   $(".seconds").text(getSeconds());
+  // When the timer reaches zero (0)
   if (timerSecs === 0) {
     clearInterval(timerRunning);
+    $(".timer-type").text("Time's Up!")
+    // Timer Sound Effect
     var timerSound = new Audio("audio/one-step-forward-samsung.mp3");
     timerSound.play();
-    // console.log(Notification.permission)                      //delete me
-    // if (Notification.permission === "granted") {
-    //   console.log("Attempting to show notification.");
-    //   var notify = new Notification('Hi there!', {
-    //     body: 'How are you doing?',
-    //     icon: 'https://bit.ly/2DYqRrh',
-    //   });
-    //
-    //   // var notify = new Notification("Time's Up!", {
-    //   //   body: "Keep up the great work!",
-    //   //   icon: "images/time.png",
-    //   // });
-    // }
-    $(".timer-type").text("Time's Up!")
+    // 2 second delay until page auto-shifts to next timer type
     setTimeout(function() {
       if (currentTimerSetting === "pomodoro") {
         numPomodorosCompleted += 1;
@@ -280,20 +309,22 @@ function Decrement() {
         updateTimerType("pomodoro");
       }
     }, 2000);
+    // Show correct buttons
     $("#stop-button").hide();
     $("#reset-button").hide();
     $("#start-button").fadeIn();
   }
 }
 
+// Changes and returns the new timerMins variable value
 function getMinutes() {
   timerMins = Math.floor(timerSecs / 60);
   return timerMins;
 }
 
+// Function returns info based on the value of timerSecs but does not change it
+// It is changed in Decrement()
 function getSeconds() {
-  // Function returns info based on the value of timerSecs but does not change it
-  // It is changed in Decrement()
   var displaySeconds = timerSecs - Math.round(timerMins * 60);
   if (displaySeconds < 10) {
     return "0" + displaySeconds;
