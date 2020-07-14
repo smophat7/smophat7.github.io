@@ -62,11 +62,11 @@ footer > p {
 }
 
 /* Footer */
-.icon-credit {
+.content-credit {
   font-size: 0.6rem;
 }
 
-.icon-credit a {
+.content-credit a {
   text-decoration: none;
   color: var(--main-text-color)
 }

@@ -45,7 +45,6 @@ $(document).ready(function() {
     $("#start-button").attr("src", "images/play-dark-grey.svg");
     $("#stop-button").attr("src", "images/pause-dark-grey.svg");
     $("#reset-button").attr("src", "images/reset-dark-grey.svg");
-
   }
   // Load timer types and values saved from previous sessions
   if (localStorage.getItem("pomodoro") != null) {
@@ -249,6 +248,8 @@ function Decrement() {
   $(".seconds").text(getSeconds());
   if (timerSecs === 0) {
     clearInterval(timerRunning);
+    var timerSound = new Audio("audio/one-step-forward-samsung.mp3");
+    timerSound.play();
     // console.log(Notification.permission)                      //delete me
     // if (Notification.permission === "granted") {
     //   console.log("Attempting to show notification.");
