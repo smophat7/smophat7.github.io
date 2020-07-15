@@ -10,7 +10,8 @@
   --main-bg-color: #EEEEEE;
   --secondary-bg-color: #32E0C4;
   --main-text-color: #222831;
-  --secondary-text-color: #393E46;
+  --secondary-text-color: #32E0C4;
+  /* Could use: #393E46 */
 }
 
 /******************** Tag Selectors ********************/

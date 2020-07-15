@@ -1,10 +1,6 @@
 // NOTES TO SELF:
-  // Reduce the initialization of "Timer Type Controls" buttons into one loop (like in the memory game)?
-    // Not sure if that would work
   // Animate color transitions (could fade out whole page and make it come back a different color over like 1 second)
-  // Alarm sound (change sounds in settings)
   // Add a reset to default setting
-  // See the timer updating in the tab image or text as well
   // Saving settings resets the times, which is good except that it ruins your progress in a pomdoro. (currently doesn't stop the clock - good)
   // Retain number of pomodoros completed when you go to the about page and background
   // Send notifications from the browser, or at least an alert
@@ -12,9 +8,6 @@
   // Eventually:
     // Keep timer going in the background or in a pop-up when it runs and you go to the about page (or just open new tab for now - quick fix)
     // Add note taking section where you can write and check off your to-do list
-
-  //To-Do: refactor and organize all of this, there are definitely some new functions to be made
-
 
 
 // Default timer settings than can be changed by the user
@@ -88,6 +81,7 @@ $(".save-button").click(function() {
   localStorage.setItem("numPomodoros", userNumPomodoroSetting);
   // Theming options
   if ($("input[name='theme']:checked").val() === "darkModeValue") {
+    // Remove theme (automatically dark) attribute from :root
     document.documentElement.removeAttribute("theme");
     localStorage.removeItem("lightTheme");
     themeMode = "dark";
@@ -97,6 +91,7 @@ $(".save-button").click(function() {
     $("#reset-button").attr("src", "images/reset-almost-white.svg");
   }
   else if ($("input[name='theme']:checked").val() === "lightModeValue") {
+    // Add :root attribute to shift color scheme to light theme
     document.documentElement.setAttribute("theme", "light");
     localStorage.setItem("lightTheme", "true");
     themeMode = "light";
@@ -107,7 +102,7 @@ $(".save-button").click(function() {
   }
 });
 
-// Timer Controls Stylization - Theme Based
+// Timer Controls Coloring - Theme Based
 $("#start-button").hover(
   // Mouse on
   function() {
@@ -285,10 +280,23 @@ function Decrement() {
   // Update minute/second values
   $(".minutes").text(getMinutes());
   $(".seconds").text(getSeconds());
+  // Page title updates with time and correct timer types
+  switch(currentTimerSetting) {
+    case "pomodoro":
+      document.title = getMinutes() + ":" + getSeconds() + " - Pomodoro";
+      break;
+    case "shortBreak":
+      document.title = getMinutes() + ":" + getSeconds() + " - Short Break";
+      break;
+    case "longBreak":
+      document.title = getMinutes() + ":" + getSeconds() + " - Long Break";
+      break;
+  }
   // When the timer reaches zero (0)
   if (timerSecs === 0) {
     clearInterval(timerRunning);
-    $(".timer-type").text("Time's Up!")
+    // Change header text
+    $(".timer-type").text("Time's Up!");
     // Timer Sound Effect
     var timerSound = new Audio("audio/one-step-forward-samsung.mp3");
     timerSound.play();
@@ -299,14 +307,20 @@ function Decrement() {
         updateProgressMessage(numPomodorosCompleted);
         if (numPomodorosCompleted < timeTypes["numPomodorosPerLongBreak"]) {
           updateTimerType("shortBreak");
+          // Change page title
+          document.title = "Begin Short Break?";
         }
         else {
           updateTimerType("longBreak");
+          // Change page title
+          document.title = "Begin Long Break?";
           numPomodorosCompleted = 0;
         }
       }
       else {
         updateTimerType("pomodoro");
+        // Change page title
+        document.title = "Begin Pomodoro?";
       }
     }, 2000);
     // Show correct buttons
@@ -322,8 +336,7 @@ function getMinutes() {
   return timerMins;
 }
 
-// Function returns info based on the value of timerSecs but does not change it
-// It is changed in Decrement()
+// Returns info based on the value of timerSecs but does not change it [changed in Decrement()]
 function getSeconds() {
   var displaySeconds = timerSecs - Math.round(timerMins * 60);
   if (displaySeconds < 10) {
