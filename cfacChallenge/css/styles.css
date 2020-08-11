@@ -9,9 +9,12 @@
 }
 
 /* Bootstrap Navbar Overrides */
+.navbar {
+  min-height: 80px;
+}
+
 .navbar-custom {
   background-color: var(--byu-blue);
-  margin-bottom: 30px;
 }
 
 .navbar-custom .navbar-brand,
@@ -52,9 +55,20 @@
 
 
 
-/* .navbar {
-  min-height: 100px;
+/* .carousel-cell {
+  max-height: 500px;
+} */
+
+.carousel {
+  height: 400px;
 }
+
+/* cell inherit height from carousel */
+.carousel-cell {
+  height: 100%;
+}
+
+
 
 
 
