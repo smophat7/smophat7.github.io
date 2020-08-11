@@ -3,3 +3,37 @@
   max-width: 1000px;
   margin: auto;
 }
+
+.mission-statement-content {
+  text-align: left;
+}
+
+.featured-faculty-container {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+}
+
+.faculty-spotlight-row {
+  margin-bottom: 35px;
+}
+
+.featured-faculty-container img {
+  margin-top: 35px;
+}
+
+.faculty-spotlight-info {
+  max-width: 400px;
+  margin: auto;
+}
+
+
+
+.facilities-overview-container {
+  background-color: var(--main-bg-color);
+  max-width: 1000px;
+  text-align: center;
+}
+
+.facilities-overview-container .card {
+  margin: 35px auto;
+}

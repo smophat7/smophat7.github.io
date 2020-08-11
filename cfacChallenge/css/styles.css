@@ -8,6 +8,10 @@
 --secondary-text-color: #ffffff;
 }
 
+body {
+  background-color: var(--main-bg-color);
+}
+
 
 /* Bootstrap Navbar Overrides */
 .navbar {
@@ -76,6 +80,11 @@
 .social-media-icons {
   width: 35px;
   margin: 10px 20px 0 0;
+  transition: transform 0.2s;
+}
+
+.social-media-icons:hover {
+  transform: scale(1.2);
 }
 
 .bottom-footer {
@@ -83,12 +92,7 @@
   color: var(--secondary-text-color)
   padding: 200px;
   text-align: center;
-  /* justify-content: center; */
 }
-
-/* .footer-byu-link1 {
-  width: 100%;
-} */
 
 .footer-byu-image {
   max-width: 600px;
@@ -101,22 +105,6 @@
   padding-bottom: 35px;
   margin: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
