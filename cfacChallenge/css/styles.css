@@ -59,6 +59,7 @@ body {
 } */
 
 
+
 /* Bootsrap Jumbotron Overrides */
 .jumbotron-image {
   background-position: center;
@@ -106,24 +107,56 @@ body {
   margin: 0;
 }
 
+/* Other */
 
-
-
-
-
-/* .hero-header {
-  height: 400px;
-  /* background-color: blue; */
-  /* background-image: url("images/red-dancers-photoshoot.jfif"); */
+/* .btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: var(--byu-blue);
+    border-color: var(--byu-blue);
 } */
 
-
-
-/* Bootsrap Carousel Overrides */
-/* .carousel {
-  height: 300px;
+.byu-button {
+  color: var(--secondary-text-color);
+  background-color: var(--byu-blue);
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: solid var(--byu-blue);
 }
 
-.carousel-cell {
-  height: 300px;
+.byu-button:link {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.byu-button:visited {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.byu-button:hover {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+.byu-button:active {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+
+/* a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
 } */

@@ -37,3 +37,7 @@
 .facilities-overview-container .card {
   margin: 35px auto;
 }
+
+.card-img-top {
+  max-height: 230px;
+}

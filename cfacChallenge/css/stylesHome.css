@@ -1,0 +1,39 @@
+.covid-banner {
+  background-color: var(--secondary-bg-color);
+  /* padding: 10px; */
+  font-size: 1.2rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.covid-banner p {
+  max-width: 1300px;
+  margin: auto auto 15px;
+}
+
+.student-resources-container {
+  max-width: 1300px;
+  text-align: center;
+}
+
+.student-resources-container .card {
+  margin-top: 20px;
+}
+
+
+
+/* .hero-header {
+  height: 400px;
+  /* background-color: blue; */
+/* background-image: url("images/red-dancers-photoshoot.jfif"); */
+}
+
+*/
+/* Bootsrap Carousel Overrides */
+/* .carousel {
+  height: 300px;
+}
+
+.carousel-cell {
+  height: 300px;
+} */
