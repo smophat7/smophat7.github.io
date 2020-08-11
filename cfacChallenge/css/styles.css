@@ -8,6 +8,7 @@
 --secondary-text-color: #ffffff;
 }
 
+
 /* Bootstrap Navbar Overrides */
 .navbar {
   min-height: 80px;
@@ -43,7 +44,7 @@
   fill: var(--main-bg-color);
 }
 
-.btn,
+/* .btn,
 .btn:hover,
 .btn:active,
 .btn:visited,
@@ -51,32 +52,90 @@
   background-color: var(--secondary-bg-color);
   border-color: var(--secondary-bg-color);
   color: var(--main-text-color);
+} */
+
+
+/* Bootsrap Jumbotron Overrides */
+.jumbotron-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Footer */
+.upper-footer {
+  background-color: var(--tertiary-bg-color);
+  padding: 25px;
+}
+
+.footer-heading {
+  margin-top: 15px;
+}
+
+.social-media-icons {
+  width: 35px;
+  margin: 10px 20px 0 0;
+}
+
+.bottom-footer {
+  background-color: var(--byu-blue);
+  color: var(--secondary-text-color)
+  padding: 200px;
+  text-align: center;
+  /* justify-content: center; */
+}
+
+/* .footer-byu-link1 {
+  width: 100%;
+} */
+
+.footer-byu-image {
+  max-width: 600px;
+  margin: 35px auto 10px;
+}
+
+.copyright-info {
+  color: var(--secondary-text-color);
+  font-size: 0.7rem;
+  padding-bottom: 35px;
+  margin: 0;
 }
 
 
 
-/* .carousel-cell {
-  max-height: 500px;
-} */
 
-.carousel {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hero-header {
   height: 400px;
-}
-
-/* cell inherit height from carousel */
-.carousel-cell {
-  height: 100%;
-}
-
-
-
-
-
-/* .navbar-brand img {
-  width: 115px;
+  /* background-color: blue; */
+  /* background-image: url("images/red-dancers-photoshoot.jfif"); */
 } */
 
-/* .navbar-toggle {
-  margin-top: 28px;
-  padding: 9px 10px !important;
+
+
+/* Bootsrap Carousel Overrides */
+/* .carousel {
+  height: 300px;
+}
+
+.carousel-cell {
+  height: 300px;
 } */
