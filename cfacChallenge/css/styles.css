@@ -1,0 +1,68 @@
+/* Color Scheme */
+:root {
+--byu-blue: #002e5d;
+--main-bg-color: #ffffff;
+--secondary-bg-color: #f0f0f0;
+--tertiary-bg-color: #e5e5e5;
+--main-text-color: black;
+--secondary-text-color: #ffffff;
+}
+
+/* Bootstrap Navbar Overrides */
+.navbar-custom {
+  background-color: var(--byu-blue);
+  margin-bottom: 30px;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: var(--secondary-text-color);
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--secondary-text-color);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: var(--tertiary-bg-color);
+}
+
+.dropdown-menu {
+  min-width: 320px;
+}
+
+.navbar-brand {
+  /* padding: 0 15px;
+  height: 75px;
+  line-height: 75px; */
+  fill: var(--main-bg-color);
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:visited,
+.btn:focus {
+  background-color: var(--secondary-bg-color);
+  border-color: var(--secondary-bg-color);
+  color: var(--main-text-color);
+}
+
+
+
+/* .navbar {
+  min-height: 100px;
+}
+
+
+
+/* .navbar-brand img {
+  width: 115px;
+} */
+
+/* .navbar-toggle {
+  margin-top: 28px;
+  padding: 9px 10px !important;
+} */
