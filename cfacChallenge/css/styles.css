@@ -1,3 +1,5 @@
+/* This CSS file is used by each HTML page */
+
 /* Color Scheme */
 :root {
 --byu-blue: #002e5d;
@@ -8,6 +10,8 @@
 --secondary-text-color: #ffffff;
 }
 
+
+/* Whole Site */
 body {
   background-color: var(--main-bg-color);
   font-family: "Sora", sans-serif;
@@ -17,6 +21,7 @@ body {
 h1 {
   color: var(--byu-blue);
 }
+
 
 /* Bootstrap Navbar Overrides */
 .navbar {
@@ -47,22 +52,8 @@ h1 {
 }
 
 .navbar-brand {
-  /* padding: 0 15px;
-  height: 75px;
-  line-height: 75px; */
   fill: var(--main-bg-color);
 }
-
-/* .btn,
-.btn:hover,
-.btn:active,
-.btn:visited,
-.btn:focus {
-  background-color: var(--secondary-bg-color);
-  border-color: var(--secondary-bg-color);
-  color: var(--main-text-color);
-} */
-
 
 
 /* Bootsrap Jumbotron Overrides */
@@ -84,9 +75,9 @@ h1 {
 }
 
 .social-media-icons {
-  width: 35px;
   margin: 10px 20px 0 0;
   transition: transform 0.2s;
+  width: 35px;
 }
 
 .social-media-icons:hover {
@@ -101,67 +92,41 @@ h1 {
 }
 
 .footer-byu-image {
-  max-width: 600px;
   margin: 35px auto 10px;
+  max-width: 600px;
 }
 
 .copyright-info {
   color: var(--secondary-text-color);
   font-size: 0.7rem;
-  padding-bottom: 35px;
   margin: 0;
+  padding-bottom: 35px;
 }
 
+
 /* Other */
-
-/* .btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-    background-color: var(--byu-blue);
-    border-color: var(--byu-blue);
-} */
-
 .byu-button {
-  color: var(--secondary-text-color);
   background-color: var(--byu-blue);
-  border-radius: 15px;
-  text-decoration: none;
-  padding: 10px 20px;
   border: solid var(--byu-blue);
+  border-radius: 15px;
+  color: var(--secondary-text-color);
+  padding: 10px 20px;
+  text-decoration: none;
 }
 
 .byu-button:link {
-  text-decoration: none;
   color: var(--secondary-text-color);
+  text-decoration: none;
 }
 .byu-button:visited {
-  text-decoration: none;
   color: var(--secondary-text-color);
+  text-decoration: none;
 }
 .byu-button:hover {
-  text-decoration: none;
   color: var(--secondary-text-color);
+  text-decoration: none;
 }
 .byu-button:active {
-  text-decoration: none;
   color: var(--secondary-text-color);
+  text-decoration: none;
 }
-
-
-/* a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:active {
-    text-decoration: underline;
-} */

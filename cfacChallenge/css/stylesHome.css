@@ -1,16 +1,63 @@
+/* COVID-19 Banner */
 .covid-banner {
-  background-color: var(--secondary-bg-color);
-  /* padding: 10px; */
   font-size: 1.2rem;
   margin-top: 0;
   text-align: center;
 }
 
 .covid-banner p {
+  margin: auto auto 30px;
   max-width: 1300px;
-  margin: auto auto 15px;
 }
 
+
+/* Degree Offerings Section */
+.degree-offerings-container {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+}
+
+.degree-offerings-container h2 {
+  color: var(--secondary-text-color);
+  padding: 0;
+  text-align: left;
+}
+
+.degree-offerings-container p {
+  margin: auto;
+  width: 80%;
+}
+
+.degree-offerings-content-container {
+  margin: auto;
+  max-width: 1300px;
+}
+
+
+
+/* Bootstrap Carousel Overrides */
+.carousel {
+  height: 300px;
+  margin: 30px auto 70px;
+}
+
+.carousel img {
+  margin: auto;
+  max-height: 350px;
+  max-width: 250px;
+}
+
+.dark {
+  color: var(--byu-blue);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+
+/* Student Resources Section */
 .student-resources-container {
   max-width: 1300px;
   text-align: center;
@@ -19,21 +66,3 @@
 .student-resources-container .card {
   margin-top: 20px;
 }
-
-
-
-/* .hero-header {
-  height: 400px;
-  /* background-color: blue; */
-/* background-image: url("images/red-dancers-photoshoot.jfif"); */
-}
-
-*/
-/* Bootsrap Carousel Overrides */
-/* .carousel {
-  height: 300px;
-}
-
-.carousel-cell {
-  height: 300px;
-} */

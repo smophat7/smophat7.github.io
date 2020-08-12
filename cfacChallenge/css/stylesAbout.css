@@ -1,14 +1,17 @@
+/* Mission Statement Section */
 .mission-statement {
-  text-align: center;
-  max-width: 1000px;
-  margin: auto;
   line-height: 2;
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
 }
 
 .mission-statement-content {
   text-align: left;
 }
 
+
+/* Faculty Spotlight Section */
 .featured-faculty-container {
   background-color: var(--secondary-bg-color);
   text-align: center;
@@ -23,15 +26,15 @@
 }
 
 .faculty-spotlight-info {
-  max-width: 400px;
   margin: auto;
+  max-width: 400px;
 }
 
 
-
+/* Facilities Section */
 .facilities-overview-container {
-  background-color: var(--main-bg-color);
   max-width: 1000px;
+  background-color: var(--main-bg-color);
   text-align: center;
 }
 
