@@ -1,3 +1,91 @@
+/* Whole Page */
+html {
+  scroll-behavior: smooth;
+}
+
+.scrolled-to {
+  position: relative;
+  top: -100px;
+}
+
+
+/* Audition Announcement Section */
+.audition-announcement-container {
+  background-color: var(--secondary-bg-color);
+}
+
+
+/* Audition Information Section */
+
+.audition-information-container hr {
+  margin: 30px auto;
+}
+
+.audition-information-header p {
+  margin-bottom: none;
+}
+
+.audition-information-content {
+  padding: 35px;
+}
+
+.audition-information-content h3 {
+  padding: 15px 0;
+}
+
+.audition-information-content p {
+  padding-bottom: 15px;
+}
+
+.background-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 450px;
+  background-position: center;
+}
+
+.ballet-img {
+  background-image: url("../images/ballet.png");
+}
+
+.ballroom-img {
+  background-image: url("../images/ballroom.jfif");
+}
+
+.contemporary-img {
+  background-image: url("../images/contemporary.jfif");
+}
+
+.world-dance-img {
+  background-image: url("../images/world-dance.jfif");
+}
+
+.mdt-img {
+  background-image: url("../images/mdt.jpg");
+}
+
+
+/* Registration Form Section */
 .audition-form-container {
- max-width: 1200px;
+  max-width: 1200px;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 576px) {
+  .audition-information-content {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .audition-information-content {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  hr {
+    display: none;
+  }
 }
