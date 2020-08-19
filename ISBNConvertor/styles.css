@@ -1,0 +1,37 @@
+/* Color Scheme */
+:root {
+  --main-bg-color: #f9f9f9;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 30px auto;
+}
+
+footer {
+  margin-top: 70vh;
+  text-align: center;
+}
+
+
+.main-content {
+  margin: auto;
+  max-width: 310px;
+}
+
+#isbn10-input {
+  width: 200px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.isbn13-results-container {
+  margin-top: 40px;
+}

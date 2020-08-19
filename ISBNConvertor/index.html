@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="book.svg">
   <!-- Favicon -->
   <title>ISBN Convertor</title>
 </head>
@@ -12,19 +14,29 @@
 <body>
 
   <h1>ISBN Convertor</h1>
-  <h2>ISBN 10</h2>
-  <form id="isbn10-conversion">
-    <label for="isbn10-input">Enter 10-digit ISBN number:</label>
-    <input type="text" id="isbn10-input" name="isbn10" value="">
-    <button type="submit" name="isbn10-submit">Convert</button>
-  </form>
-  <div class="isbn13-results-container">
-    <h2>ISBN 13</h2>
-    <h3 class="isbn13-result">(corresponding ISBN 13 number)</h3>
+
+  <div class="main-content">
+    <h2>ISBN 10</h2>
+    <form id="isbn10-conversion">
+      <label for="isbn10-input">Enter 10-digit ISBN number:</label>
+      <input type="text" class="form-control" id="isbn10-input" name="isbn10" value="">
+      <button type="submit" class="btn btn-dark" name="isbn10-submit">Convert</button>
+    </form>
+    <div class="isbn13-results-container d-none">
+      <h2>ISBN 13</h2>
+      <h3 class="isbn13-result">(corresponding ISBN 13 number)</h3>
+    </div>
   </div>
 
+  <footer>
+    <p>Icons made by <a href="https://smashicons.com/" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+    <h4>Copyright © 2020 Spencer Moffat</h4>
+  </footer>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
   <script src="index.js" charset="utf-8"></script>
 </body>
 
