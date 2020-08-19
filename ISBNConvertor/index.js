@@ -36,6 +36,8 @@ $("#isbn10-conversion").submit(function() {
 
   ResetValues();
 
+  // DisplayGoogleBooksData();
+
   // Prevent page reload on form submission
   return false;
 });
@@ -63,3 +65,7 @@ function ResetValues() {
   isbn10 = 0;
   isbn10_digits = [9,7,8];
 }
+
+// function DisplayGoogleBooksData() {
+//
+// }
