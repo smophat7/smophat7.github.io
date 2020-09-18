@@ -1,7 +1,9 @@
 /* Color Scheme */
 :root {
   --main-background-color: #fcfcfc;
-  --accent-color: #10375c;
+  --main-color: #1e94ea;
+  --secondary-color:#f25d59;
+  --tertiary-color: #00a64e;
 }
 
 /***************************TAG SELECTORS**************************/
@@ -21,23 +23,39 @@ h1 {
 }
 
 h2 {
-  color: var(--accent-color);
+  color: var(--main-color);
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+h3 {
+  color: var(--secondary-color);
   font-family: 'Roboto Slab', serif;
   /* margin-top: 0;
   margin-bottom: 10px; */
 }
 
-h3 {
-  color: var(--accent-color);
+h4 {
+  color: var(--secondary-color);
   font-family: 'Roboto Slab', serif;
+  font-weight: 300;
   /* margin-top: 0; */
 }
 
+h5 {
+  color: var(--secondary-color);
+  font-family: 'Roboto Slab', serif;
+  /* margin-top: 0;
+  margin-bottom: 10px; */
+}
+
 p {
-  /* color: var(--accent-color); */
+  /* color: var(--main-color); */
   font-family: 'Montserrat', sans-serif;
+  font-size: 0.8em;
   line-height: 2;
-  /* margin: 0; */
+  margin: 0;
 }
 
 
@@ -45,22 +63,12 @@ p {
 
 /*///////Navigation Controls and Navigation Bar///////*/
 .navbar-custom {
-  background-color: var(--accent-color);
+  background-color: var(--main-color);
 }
 
 .profile-pic {
   border-radius: 50%;
 }
-
-/* .scrolled-to {
-  position: relative;
-  top: -100px;
-}
-
-.scrolled-to-about {
-  position: relative;
-  top: -60px;
-} */
 
 
 /*////////////// Header //////////////*/
@@ -70,16 +78,68 @@ p {
   width: 100vw;
   height: calc(100vh - 66px);
   max-height: 1000px;
-  background-image: linear-gradient(var(--accent-color), #127681);
+  background-image: linear-gradient(var(--main-color), var(--main-background-color));
+  /* background-image: linear-gradient(var(--main-color), white); */
   margin: auto;
+  padding: 10px;
 }
 
-.col-md-6 {
-  background-color: white;
+.greeting-content {
+}
+
+.header-portrait-container {
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+}
+
+.social-link {
+  width: 40px;
+  margin: 0 25px;
+  transition: transform 0.2s;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .greeting-content {
+    padding-top: 50px;
+    font-size: 1.3em;
+  }
+}
+
+
+/*////////////// Experience //////////////*/
+.experience-container {
+  max-width: 850px;
+  margin-top: 66px;
+  padding: 50px 30px;
+}
+
+.experience-container .row {
+  margin: 8px 0;
 }
 
 
 
-.something-here {
+@media (min-width: 768px) {
+  .experience-container .row {
+    margin: 30px 0;
+  }
+
+  .experience-container p {
+    width: 85%;
+    margin: auto;
+  }
+}
+
+
+/*////////////// Portfolio //////////////*/
+.portfolio-container {
   height: 700px;
+  background-color: var(--main-color);
+  margin-top: 66px;
+  padding: 50px 30px;
 }
