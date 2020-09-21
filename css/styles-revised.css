@@ -76,12 +76,12 @@ p {
 .header-container {
   /* position: relative; */
   /* top: 56px; */
-  width: 100vw;
+  width: 100%;
   /* height: calc(100vh - 56px); */
   max-height: 1000px;
   background-image: linear-gradient(var(--main-color), var(--main-background-color));
   /* background-image: linear-gradient(var(--main-color), white); */
-  margin: auto;
+  /* margin: auto; */
   padding: 10px;
 }
 
@@ -145,10 +145,51 @@ p {
 }
 
 
+
+
+/*////////////// Experience (v.2) //////////////*/
+.experience-container-2 {
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 56px;
+  padding: 50px 30px;
+}
+
+.experience-container-2 .row {
+  margin: 8px 0;
+  /* font-size: 0.9rem; */
+}
+
+.experience-container-2 .col-md-6 {
+  padding: 0;
+}
+
+.experience-container-2 .row p {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .experience-container-2 .row {
+    margin: 30px 0;
+  }
+
+  .experience-container-2 p {
+    width: 85%;
+    margin: auto;
+  }
+}
+
+
+
+
+
 /*////////////// Portfolio //////////////*/
 .portfolio-container {
   height: 700px;
+  width: 100%;
   background-color: var(--main-color);
-  margin-top: 56px;
+  /* margin-top: 50px; */
+  margin: 50px 0 0;
   padding: 50px 30px;
 }
