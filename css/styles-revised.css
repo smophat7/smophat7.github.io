@@ -14,7 +14,7 @@ html {
 
 body {
   text-align: center;
-  padding-top: 56px;
+  padding-top: 50px;
 }
 
 h1 {
@@ -76,7 +76,7 @@ p {
   /* position: relative; */
   /* top: 56px; */
   width: 100%;
-  /* height: calc(100vh - 56px); */
+  height: calc(100vh - 56px);
   max-height: 1000px;
   background-image: linear-gradient(var(--main-color), var(--main-background-color));
   /* background-image: linear-gradient(var(--main-color), white); */
