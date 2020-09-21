@@ -41,7 +41,6 @@ h4 {
   color: var(--secondary-color);
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
-  /* margin-top: 0; */
 }
 
 h5 {
@@ -112,7 +111,7 @@ p {
   }
   .header-container p {
     margin-top: 30px;
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -128,6 +127,9 @@ p {
   margin: 8px 0;
 }
 
+.experience-intro-content p {
+  margin-bottom: 20px;
+}
 
 
 @media (min-width: 768px) {
