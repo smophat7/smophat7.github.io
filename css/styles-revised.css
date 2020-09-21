@@ -181,17 +181,28 @@ p {
     margin: auto;
   }
 } */
-
+}
 
 
 
 
 /*////////////// Portfolio //////////////*/
 .portfolio-container {
-  height: 700px;
+  /* height: 700px; */
   width: 100%;
   background-color: var(--main-color);
   /* margin-top: 50px; */
   margin: 50px 0 0;
-  padding: 50px 30px;
+  /* padding: 50px 30px; */
+}
+
+.fly {
+  opacity: 0;
+  transition: all 600ms ease-in-out;
+  transform: translateY(100px) scale(1.05) translate3d(0, 0, 0);
+}
+
+.show-block {
+  opacity: 1;
+  transform: translateY(0) scale(1) translate3d(0, 0, 0);
 }
