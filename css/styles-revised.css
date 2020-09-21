@@ -85,9 +85,6 @@ p {
   padding: 10px;
 }
 
-.greeting-content {
-}
-
 .header-portrait-container {
   width: 100%;
   margin: auto;
@@ -110,12 +107,12 @@ p {
 }
 
 @media (min-width: 768px) {
-  .greeting-content {
-    padding-top: 50px;
-    font-size: 1.4rem;
-  }
   .header-portrait-container {
     padding: 0 70px;
+  }
+  .header-container p {
+    margin-top: 30px;
+    font-size: 1.6rem;
   }
 }
 
@@ -142,6 +139,11 @@ p {
     width: 85%;
     margin: auto;
   }
+
+  .experience-intro-content p {
+    padding-top: 60px;
+  }
+
 }
 
 
@@ -174,11 +176,11 @@ p {
     margin: 30px 0;
   }
 
-  .experience-container-2 p {
+  /* .experience-container-2 p {
     width: 85%;
     margin: auto;
   }
-}
+} */
 
 
 
