@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Animate On Scroll library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles-revised.css">
   <link rel="icon" href="images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500&family=Roboto+Slab:wght@300;900&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
@@ -38,7 +40,7 @@
   <!-- Main heading - picture and intro -->
   <div class="header-container">
     <div class="container">
-      <div class="row align-items-center fly">
+      <div class="row align-items-center" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
         <div class="col-md-6">
           <div class="header-portrait-container">
             <img class="img-fluid rounded-circle" src="images/Spencer_Beach.jpg" alt="Portrait of Spencer">
@@ -120,14 +122,14 @@
 
   <a id="experience"></a>
   <div class="container experience-container-2">
-    <h2 class="fly">My Strangely Applicable Experience</h2>
+    <h2>My Strangely Applicable Experience</h2>
     <div class="row">
       <div class="col-md-6 mb-4 experience-intro-content">
-        <p class="fly">Recently, I’ve come to the conclusion that having a uniquely varied background is not a hindrance, but an asset. I used to think that because I haven’t been coding since I was 14, I must be less than other developers. But I believe I make up for my relative lack of professional experience with my aptitude and passion for learning. Click around to learn more about my experiences.</p>
+        <p>Recently, I’ve come to the conclusion that having a uniquely varied background is not a hindrance, but an asset. I used to think that because I haven’t been coding since I was 14, I must be less than other developers. But I believe I make up for my relative lack of professional experience with my aptitude and passion for learning. Click around to learn more about my experiences.</p>
         <!-- <p>On my way to discovering that I want to develop software, I took on some surprisingly relevant work and research opportunities. Click around to learn more about where I am come from and what I can offer. Warning: some of it is kind of weird.</p> -->
       </div>
       <div class="col-md-6">
-        <div class="accordion fly" id="accordion">
+        <div class="accordion" id="accordion">
           <div class="card">
             <div class="card-header" id="headingFour">
               <h2 class="mb-0">
@@ -217,19 +219,19 @@
   <a id="portfolio"></a>
   <div class="container-fluid portfolio-container">
     <h1>something</h1>
-    <div class="fly">
+    <div>
       <h2>this is a test</h2>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </div>
-    <div class="fly">
+    <div>
       <h2>this is a test</h2>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </div>
-    <div class="fly">
+    <div>
       <h2>this is a test</h2>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </div>
-    <div class="fly">
+    <div>
       <h2>this is a test</h2>
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </div>
@@ -243,51 +245,14 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     $('.navbar-collapse a').click(function() {
       $(".navbar-collapse").collapse('hide');
     });
   </script>
   <script>
-    var timer = 0;
-    function recheck() {
-        var window_top = $(this).scrollTop();
-        var window_height = $(this).height();
-        var view_port_s = window_top;
-        var view_port_e = window_top + window_height;
-
-        if ( timer ) {
-          clearTimeout( timer );
-        }
-
-        $('.fly').each(function(){
-          var block = $(this);
-          var block_top = block.offset().top;
-          var block_height = block.height();
-
-          if ( block_top < view_port_e ) {
-            timer = setTimeout(function(){
-              block.addClass('show-block');
-            },100);
-          } else {
-            timer = setTimeout(function(){
-              block.removeClass('show-block');
-            },100);
-          }
-        });
-    }
-
-    $(function(){
-      $(window).scroll(function(){
-        recheck();
-      });
-
-      $(window).resize(function(){
-         recheck();
-      });
-
-      recheck();
-    });
+    AOS.init();
   </script>
 </body>
 
