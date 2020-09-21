@@ -153,7 +153,7 @@ p {
 .experience-container-2 {
   width: 90%;
   max-width: 1000px;
-  margin-top: 56px;
+  /* margin-bottom: 200px; */
   padding: 50px 30px;
 }
 
