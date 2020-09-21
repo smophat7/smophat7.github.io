@@ -14,6 +14,7 @@ html {
 
 body {
   text-align: center;
+  padding-top: 56px;
 }
 
 h1 {
@@ -53,7 +54,7 @@ h5 {
 p {
   /* color: var(--main-color); */
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8em;
+  font-size: 1.1rem;
   line-height: 2;
   margin: 0;
 }
@@ -73,10 +74,10 @@ p {
 
 /*////////////// Header //////////////*/
 .header-container {
-  position: relative;
-  top: 66px;
+  /* position: relative; */
+  /* top: 56px; */
   width: 100vw;
-  height: calc(100vh - 66px);
+  /* height: calc(100vh - 56px); */
   max-height: 1000px;
   background-image: linear-gradient(var(--main-color), var(--main-background-color));
   /* background-image: linear-gradient(var(--main-color), white); */
@@ -88,14 +89,19 @@ p {
 }
 
 .header-portrait-container {
-  width: 70%;
+  width: 100%;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
 }
 
+/* .header-portrait-container>img {
+  min-width: 200px;
+  margin: auto;
+} */
+
 .social-link {
-  width: 40px;
-  margin: 0 25px;
+  width: 2.2rem;
+  margin: 2rem 0.8rem 0;
   transition: transform 0.2s;
 }
 
@@ -106,7 +112,10 @@ p {
 @media (min-width: 768px) {
   .greeting-content {
     padding-top: 50px;
-    font-size: 1.3em;
+    font-size: 1.4rem;
+  }
+  .header-portrait-container {
+    padding: 0 70px;
   }
 }
 
@@ -114,7 +123,7 @@ p {
 /*////////////// Experience //////////////*/
 .experience-container {
   max-width: 850px;
-  margin-top: 66px;
+  margin-top: 56px;
   padding: 50px 30px;
 }
 
@@ -140,6 +149,6 @@ p {
 .portfolio-container {
   height: 700px;
   background-color: var(--main-color);
-  margin-top: 66px;
+  margin-top: 56px;
   padding: 50px 30px;
 }
