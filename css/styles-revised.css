@@ -71,10 +71,6 @@ p {
   font-size: 1.4rem;
 }
 
-.profile-pic {
-  border-radius: 50%;
-}
-
 
 /*////////////// Header //////////////*/
 .header-container {
@@ -130,8 +126,11 @@ p {
   padding: 50px 30px;
 }
 
+.resume-big-screen {
+  display:none;
+}
+
 .resume-download {
-  display: none;
   background-color: var(--tertiary-color);
   border-color: var(--tertiary-color);
   font-family: 'Baloo Da 2', cursive;
@@ -168,7 +167,7 @@ p {
     margin: 30px 0;
   }
 
-  .resume-download {
+  .resume-big-screen {
     display: inline;
   }
 
