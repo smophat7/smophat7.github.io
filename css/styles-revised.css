@@ -90,11 +90,6 @@ p {
   padding: 20px;
 }
 
-/* .header-portrait-container>img {
-  min-width: 200px;
-  margin: auto;
-} */
-
 .social-link {
   width: 2.2rem;
   margin: 2rem 0.8rem 0;
@@ -103,6 +98,12 @@ p {
 
 .social-link:hover {
   transform: scale(1.2);
+}
+
+@media (max-width: 357px) {
+  .header-container {
+    height: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -118,57 +119,30 @@ p {
 
 /*////////////// Experience //////////////*/
 .experience-container {
-  max-width: 850px;
-  margin-top: 56px;
+  /* width: 90%; */
+  max-width: 1000px;
+  /* margin-bottom: 200px; */
   padding: 50px 30px;
 }
 
-.experience-container .row {
-  margin: 8px 0;
+.resume-download {
+  display: none;
 }
 
 .experience-intro-content p {
   margin-bottom: 20px;
 }
 
-
-@media (min-width: 768px) {
-  .experience-container .row {
-    margin: 30px 0;
-  }
-
-  .experience-container p {
-    width: 85%;
-    margin: auto;
-  }
-
-  .experience-intro-content p {
-    /* padding-top: 30px; */
-  }
-
-}
-
-
-
-
-/*////////////// Experience (v.2) //////////////*/
-.experience-container-2 {
-  width: 90%;
-  max-width: 1000px;
-  /* margin-bottom: 200px; */
-  padding: 50px 30px;
-}
-
-.experience-container-2 .row {
+.experience-container .row {
   margin: 8px 0;
   /* font-size: 0.9rem; */
 }
 
-.experience-container-2 .col-md-6 {
+.experience-container .col-md-6 {
   padding: 0;
 }
 
-.experience-container-2 .row p {
+.experience-container .row p {
   text-align: left;
   font-size: 0.9rem;
 }
@@ -178,8 +152,16 @@ p {
 }
 
 @media (min-width: 768px) {
-  .experience-container-2 .row {
+  .experience-container .row {
     margin: 30px 0;
+  }
+
+  .resume-download {
+    display: inline;
+  }
+
+  .experience-intro-content p {
+    /* padding-top: 30px; */
   }
 
   .experience-tab-menu {
@@ -189,15 +171,7 @@ p {
   .accordion {
     display: none;
   }
-
-  /* .experience-container-2 p {
-    width: 85%;
-    margin: auto;
-  }
-} */
 }
-
-
 
 
 /*////////////// Portfolio //////////////*/
