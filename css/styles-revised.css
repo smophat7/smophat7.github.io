@@ -246,9 +246,17 @@ li {
 }
 
 
-
 /*////////////// What's Next? & Contact //////////////*/
 .what-next-container {
   max-width: 700px;
   margin: auto;
+}
+
+/*////////////// What's Next? & Contact //////////////*/
+.footer-contact {
+  background-color: var(--main-color);
+}
+
+.footer-contact .container {
+  max-width: 700px;
 }
