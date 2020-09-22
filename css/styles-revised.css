@@ -14,7 +14,7 @@ html {
 
 body {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 55px;
   font-family: 'Averia Serif Libre', cursive;
 }
 
@@ -62,12 +62,13 @@ p {
 
 ul {
   text-align: left;
-  font-size: 1.1reml
+  font-size: 1.1rem;
 }
 
-li {
-  margin-bottom: 1.5rem;
+.inner-page-link {
+  transform: translateY(-58px);
 }
+
 
 /***************************CLASS SELECTORS**************************/
 /*///////Navigation Controls and Navigation Bar///////*/
@@ -79,15 +80,11 @@ li {
 
 /*////////////// Header //////////////*/
 .header-container {
-  /* position: relative; */
-  /* top: 56px; */
   width: 100%;
   height: calc(100vh - 56px);
   max-height: 1000px;
   background-image: linear-gradient(var(--main-color), var(--main-background-color));
-  /* background-image: linear-gradient(var(--main-color), white); */
-  /* margin: auto; */
-  padding: 10px;
+  padding: 30px;
 }
 
 .header-portrait-container {
@@ -251,6 +248,11 @@ li {
   max-width: 700px;
   margin: auto;
 }
+
+.what-next-container li {
+  margin-bottom: 1.5rem;
+}
+
 
 /*////////////// What's Next? & Contact //////////////*/
 .footer-contact {
