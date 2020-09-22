@@ -194,3 +194,37 @@ p {
   margin: 50px 0 0;
   /* padding: 50px 30px; */
 }
+
+.portfolio-row {
+  width: 80%;
+  margin: auto;
+}
+
+.app-image {
+  opacity: 0.85;
+  /* display: block; */
+  /* width: 100%; */
+  /* height: auto; */
+  transition: .5s ease;
+  backface-visibility: hidden;
+  max-width: 300px;
+}
+
+.app-caption-wrapper {
+  /* transition: .5s ease; */
+  /* opacity: 0; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.portfolio-img-container:hover .app-image {
+  opacity: 0.7;
+}
+
+/* .portfolio-img-container:hover .app-caption-wrapper {
+  opacity: 1;
+} */
