@@ -1,147 +1,387 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500&family=Roboto+Slab:wght@300;900&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-    <title>Spencer Moffat</title>
-  </head>
-  <body>
-    <div class="nav-bar-wrapper">
-      <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbar-custom">
-        <a class="navbar-brand" href="#">
-          <img class="profile-pic" src="images/Spencer_Portrait_Outside.jpg" alt="Logo" style="width:40px;">
-          Spencer Moffat
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Learn more about Spencer Moffat, a student software developer from Brigham Young University (BYU). Studying neuroscience and computer science."></head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Animate On Scroll library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-new.css">
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico">
+  <title>Spencer Moffat</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top justify-content-between navbar-custom">
+    <a class="navbar-brand" href="#"> </a>
+    <button data-aos="fade-left" data-aos-delay="1000" data-aos-duration="500" class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#what-next">Upcoming</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
     </div>
-    <div class="welcome-spread-grid">
-      <div class="welcome-message-wrapper">
-        <div class="welcome-message-contents">
-          <p class="welcome-text">Hi there. I'm Spencer.</p>
-          <a href="https://www.linkedin.com/in/spencer-moffat" target="_blank"><img class="linkedin-link" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" alt="LinkedIn-Logo"></a>
-          <a href="https://app.joinhandshake.com/users/11886054?ref=students" target="_blank"><img class="handshake-link" src="images/handshake_logo.png" alt="Handshake-logo"></a>
-        </div>
-      </div>
-      <div class="welcome-image-wrapper">
-        <img class="welcome-image" src="images/Spencer_No_Background_4MP.png" alt="Spencer">
-      </div>
-    </div>
-    <div class="page-grid">
-      <div class="about-container">
-        <a id="about" class="scrolled-to-about"></a>
-        <h2 class="about-heading">About</h2>
-        <div class="about-me-content">
-          <img class = "about-me-img" src="images/brain.png" alt="brain-clip-art">
-          <p>Officially studying neuroscience, but also passionate about computer programming. Formally trained in C++ and self-taught in HTML, CSS, JavaScript, and Python. A quick learner looking for more challenges.</p>
-        </div>
-      </div>
-      <div class="education-container">
-        <a id="education" class="scrolled-to"></a>
-        <h2>Education</h2>
-        <div class="left-col">
-          <img class="BYU-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Brigham_Young_University_medallion.svg/1200px-Brigham_Young_University_medallion.svg.png" alt="BYU-Logo">
-          <p><strong>2017 - 2022</strong></p>
-        </div>
-        <p><strong>Degree: </strong>Neuroscience, B.S.</p>
-        <p><strong>Minor: </strong>Computer Science</p>
-        <p class="extracurriculars"><strong>Extracurriculars: </strong>Phi Eta Sigma (National Academic Honor Society), Y-Serve, Ballard Center Social Venture Challenge, Men's Chorus, Symphonic Band</p><br>
-      </div>
-      <div class="experience-container">
-        <a id="experience" class="scrolled-to"></a>
-        <h2 class="experience-heading">Experience</h2>
-        <div class="exp-flexbox">
-          <div class="exp-column1">
-            <h3>Addiction Laboratory, BYU</h3>
-            <p>June 2019 - Present</p>
-          </div>
-          <div class="exp-column2">
-            <h3>Surgery Trainer / Research Assistant</h3>
-            <p>Training other surgeons to become certified in rodent survival surgeries, specifically anesthetized intracranial injections that require active and post-operative pain management, suturing, and proper sanitation practices.</p>
-          </div>
-          <div class="exp-column1">
-            <h3>17 Grapes Business Consulting</h3>
-            <p>January - April 2020</p>
-          </div>
-          <div class="exp-column2">
-            <h3>Reports Manager</h3>
-            <p>Proposed improved designs and functional features for implementation in a new PAAS. Designed interactive mockups of various features and pages within the platform using the online UI/propotyping tool Moqups.<p>
-          </div>
-          <div class="exp-column1">
-            <h3>Maxwell Institute</h3>
-            <p>April 2019 - January 2020</p>
-          </div>
-          <div class="exp-column2">
-            <h3>Co-Author / Research Assistant</h3>
-            <p>Co-authored a history of a recently closed Institute department alongside its former director. Synthesized information from various reports, academic papers, interviews, and press articles for the publication.<p>
-          </div>
-          <div class="exp-column1">
-            <h3>Sleep Laboratory, BYU</h3>
-            <p>April - August 2019</p>
-          </div>
-          <div class="exp-column2">
-            <h3>Research Assistant</h3>
-            <p>Assisted in sleep studies focusing specifically on insomnia’s role in mood. Scored polysomnograms, prepared materials, and worked in basic data management using EndNote, Compumedics Profusion 4, and Curry Neuroimaging Suite 7.<p>
+  </nav>
+
+  <!-- Main heading - picture and intro -->
+  <div class="header-container">
+    <div class="container h-100">
+      <div class="row align-items-center h-100" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
+        <div class="col-lg-6">
+          <div class="header-portrait-container">
+            <img class="img-fluid rounded-circle" src="images/Spencer_Beach.jpg" alt="Portrait of Spencer">
+            <a href="https://www.linkedin.com/in/spencer-moffat" target="_blank"><img class="social-link" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" alt="LinkedIn-Logo"></a>
+            <a href="https://app.joinhandshake.com/users/11886054?ref=students" target="_blank"><img class="social-link" src="images/handshake_logo.png" alt="Handshake-logo"></a>
+            <a href="https://github.com/smophat7" target="_blank"><img class="social-link" src="images/GitHub-Mark-120px-plus.png" alt="GitHub-logo"></a>
           </div>
         </div>
-      </div>
-      <div class="portfolio-container">
-        <a id="portfolio" class="scrolled-to"></a>
-        <h2>Portfolio</h2><br>
-        <p>After learning some basic JavaScript and jQuery, I made a game similar to Hasbro's Simon. At the start of every round, the color flashed is the one added to the sequence the player must replicate.</p><br>
-        <p>Check it out: <a href="memoryGame/index.html" target="_blank">Memory Game</a></p><br><br>
-        <p>For more JavaScript practice, I made a type of productivity timer that I like to use when working on projects. This site includes options for stylized user settings.</p><br>
-        <p>Check it out: <a href="pomodoro/index.html" target="_blank">Pomodoro Timer</a></p><br><br>
-        <p>I made a basic ISBN-10 to ISBN-13 Converter. It has the basic features right now, but more will come soon.</p><br>
-        <p>Check it out: <a href="ISBNConvertor/index.html" target="_blank">ISBN Converter</a></p><br><br>
-        <!-- <p>To learn more about CSS/HTML and the what is possible with Bootstrap, I decided to mimic the Provo Bakery website. All the content is theirs, but I edited the formatting.</p><br>
-        <p>Check it out: <a href="provoBakery/provoBakeryHome.html" target="_blank">Provo Bakery Replication</a></p><br><br> -->
-        <p>Using HTML/CSS and Bootstrap, I created a fake BYU Dance website. Some of the content is based on the existing site.</p><br>
-        <p>Check it out: <a href="cfacChallenge/home.html" target="_blank">BYU Dance Redesign</a></p><br><br>
-        <p>Looking back on some of my work done at 17 Grapes, I decided to take one of my designs a step further than a mockup. This page shows one step in only one way that a user can create custom data management environments. Here I experimented more with CSS Grid.</p><br>
-        <p>Check it out: <a href="platformDesignTemplates/platform.html" target="_blank"> Platform Template Selection</a></p>
+        <div class="col-lg-6">
+          <h1>Spencer Moffat</h1>
+          <p>Student software developer passionate about the intersection of neuroscience and computer science.</p>
+        </div>
       </div>
     </div>
-    <div class="contact-container">
-      <a id="contact" class="scrolled-to"></a>
-      <h2 class="contact-section">Contact</h2>
-      <a class="contact-details" href="https://www.linkedin.com/in/spencer-moffat" target="_blank">LinkedIn</a>
-      <a class="contact-details" href="https://app.joinhandshake.com/users/11886054?ref=students" target="_blank">Handshake</a>
-      <p class="icon-credit">Icons made by Freepik from www.flaticon.com</p>
-      <p class="copyright">© 2020 Spencer Moffat</p>
+  </div>
+
+
+  <!-- Experience -->
+  <div class="inner-page-link">
+    <a id="experience"></a>
+  </div>
+  <div class="container experience-container">
+    <h2 data-aos="fade-up" data-aos-once="true">My Strangely Applicable Experience</h2>
+    <!-- Download Resume -->
+    <div data-aos="zoom-in" data-aos-once="true">
+      <a class="btn btn-primary btn-lg resume-download resume-big-screen" href="resume.docx" role="button">Download My Resume</a>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script>
-    $('.navbar-collapse a').click(function(){
-         $(".navbar-collapse").collapse('hide');
-     });
-    </script>
-  </body>
+    <div class="row">
+      <div class="col-md-5 mb-4 experience-intro-content">
+        <p data-aos="fade-up" data-aos-once="true">Recently, I’ve come to the conclusion that having a uniquely varied background is not a hindrance, but an asset. I used to think that because I haven’t been coding since I was 14, I must be less than
+          other developers.</p>
+        <p data-aos="fade-up" data-aos-once="true">But I believe I make up for my relative lack of professional experience with my aptitude and passion for learning. Click around to learn more about my experiences.</p>
+        <!-- <p>On my way to discovering that I want to develop software, I took on some surprisingly relevant work and research opportunities. Click around to learn more about where I am come from and what I can offer. Warning: some of it is kind of weird.</p> -->
+      </div>
+
+      <!-- Accordion for mobile -->
+      <div class="col-md-7">
+        <div class="accordion" id="accordion">
+          <div class="card" data-aos="fade-up" data-aos-once="true">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  I'm studying neuroscience and computer science
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                <p>On track to graduate in April 2022 from Brigham Young University with a bachelor’s in neuroscience and a minor in computer science. I have formal training in C++ and took the extra time I had this past summer to enroll in a linear
+                  algebra class based in Python as well as teach myself HTML, CSS, and JavaScript. This semester I’ll be learning how to use Vue, Node, Express, and MongoDB in a web development course.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card" data-aos="fade-up" data-aos-once="true">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    I'm currently employed as a web developer
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <p>In August 2020, I was hired as a web developer at BYU Campus Accommodations where I am adding SQL, ASP.NET, and AJAX to my toolbelt as I help the company transition to the model-driven software platform Mendix. I am now have the
+                    Mendix Rapid Developer Certification, so I'm ready to go.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-once="true">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    I performed brain surgery on living animals
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  <p>For a year, I worked in an addiction research laboratory on campus with the primary responsibility of performing intracranial injections on anesthetized mice. I got moved up and started training, learning more about instructing
+                    others in technical tasks, teamwork, and the life-and-death importance of attention to detail. The best part is that I can technically refer to myself as a former “neurosurgeon” if I really wanted to.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-once="true">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    I designed features for a PAAS
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  <p>Working with a team of computer science and business students, I designed interactive mockups (using the aptly named Moqups) for a consulting company’s new PAAS focusing on intuitive and efficient functionality. I was the report
+                    manager too, so I oversaw the creation and delivery of our final reports to communicate our team's vision and recommendations. We masterfully managed the transition from remote work pre-COVID to remote work during COVID.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-once="true">
+              <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    I wrote a historical article with a religious scholar
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                  <p>I co-authored a history of the Center for the Preservation of Ancient Religious Texts. I synthesized information from various reports, academic papers, interviews, and press articles to construct an informative, captivating
+                    article. I learned more about writing effectively, organizing vast amounts of information, and collaborating on a creative, yet technical project.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Download Resume -->
+          <a class="btn btn-primary btn-lg mt-5 resume-download" href="resume.docx" role="button" data-aos="zoom-out" data-aos-duration="1500" data-aos-once="true">Download My Resume</a>
+        </div>
+
+        <!-- Tabbed menu for larger devices -->
+        <div class="experience-tab-menu">
+          <nav data-aos="fade-up" data-aos-once="true">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-education-tab" data-toggle="tab" href="#nav-education" role="tab" aria-controls="nav-education" aria-selected="true">Education</a>
+              <a class="nav-item nav-link" id="nav-ca-job-tab" data-toggle="tab" href="#nav-ca-job" role="tab" aria-controls="nav-ca-job" aria-selected="false">Dev Job</a>
+              <a class="nav-item nav-link" id="nav-surgery-tab" data-toggle="tab" href="#nav-surgery" role="tab" aria-controls="nav-surgery" aria-selected="false">Surgery</a>
+              <a class="nav-item nav-link" id="nav-grapes-tab" data-toggle="tab" href="#nav-grapes" role="tab" aria-controls="nav-grapes" aria-selected="false">PAAS Design</a>
+              <a class="nav-item nav-link" id="nav-maxwell-tab" data-toggle="tab" href="#nav-maxwell" role="tab" aria-controls="nav-maxwell" aria-selected="false">Writer</a>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent" data-aos="fade-up" data-aos-once="true">
+            <div class="tab-pane fade show active" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab">
+              <p>On track to graduate in April 2022 from Brigham Young University with a bachelor’s in neuroscience and a minor in computer science. I have formal training in C++ and took the extra time I had this past summer to enroll in a linear
+                algebra class based in Python as well as teach myself HTML, CSS, and JavaScript. This semester I’ll be learning how to use Vue, Node, Express, and MongoDB in a web development course.</p>
+            </div>
+            <div class="tab-pane fade" id="nav-ca-job" role="tabpanel" aria-labelledby="nav-ca-job-tab">
+              <p>In August 2020, I was hired as a web developer at BYU Campus Accommodations where I am adding SQL, ASP.NET, and AJAX to my toolbelt as I help the company transition to the model-driven software platform Mendix. I am now have the
+                Mendix Rapid Developer Certification, so I'm ready to go.</p>
+            </div>
+            <div class="tab-pane fade" id="nav-surgery" role="tabpanel" aria-labelledby="nav-surgery-tab">
+              <p>For a year, I worked in an addiction research laboratory on campus with the primary responsibility of performing intracranial injections on anesthetized mice. I got moved up and started training, learning more about instructing
+                others in technical tasks, teamwork, and the life-and-death importance of attention to detail. The best part is that I can technically refer to myself as a former “neurosurgeon” if I really wanted to.</p>
+            </div>
+            <div class="tab-pane fade" id="nav-grapes" role="tabpanel" aria-labelledby="nav-grapes-tab">
+              <p>Working with a team of computer science and business students, I designed interactive mockups (using the aptly named Moqups) for a consulting company’s new PAAS focusing on intuitive and efficient functionality. I was the report
+                manager too, so I oversaw the creation and delivery of our final reports to communicate our team's vision and recommendations. We masterfully managed the transition from remote work pre-COVID to remote work during COVID.</p>
+            </div>
+            <div class="tab-pane fade" id="nav-maxwell" role="tabpanel" aria-labelledby="nav-maxwell-tab">
+              <p>I co-authored a history of the Center for the Preservation of Ancient Religious Texts. I synthesized information from various reports, academic papers, interviews, and press articles to construct an informative, captivating
+                article. I learned more about writing effectively, organizing vast amounts of information, and collaborating on a creative, yet technical project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Portfolio -->
+  <div class="inner-page-link-portfolio">
+    <a id="portfolio"></a>
+  </div>
+
+  <!-- Small Screen Version -->
+  <div class="container-fluid portfolio-container portfolio-small-screen">
+    <h1 class="pt-5 pb-3">Portfolio</h1>
+    <div class="row">
+      <div class="col-md-6 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">Pomodoro Timer</h3>
+        <img class="rounded align-self-center img-fluid w-50 mb-3" src="/images/pomodoro-screenshot.png" alt="Screenshot of Pomodoro App">
+        <div class="media-body">
+          <p>To increase focused work, this productivity site features customer user settings and color schemes. This project uses JavaScript, jQuery, HTML, and CSS.</p>
+        </div>
+        <a href="http://smophat7.github.io/pomodoro/index.html" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="true">Get in the Zone</a>
+      </div>
+      <div class="col-md-6 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">Memory Game</h3>
+        <img class="rounded align-self-center img-fluid w-50 mb-3" src="/images/memory-game.png" alt="Screenshot of Memory Game">
+        <div class="media-body">
+          <p>Similar to Simon, this memory game adds one item to the pattern each round the user repeats it correctly. This project utilizes JavaScript, jQuery, HTML, and CSS.</p>
+        </div>
+        <a href="http://smophat7.github.io/memoryGame/" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="false">Play a Round</a>
+      </div>
+      <div class="col-md-6 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">Terminal Hangman</h3>
+        <img class="rounded align-self-center img-fluid w-50 mb-3" src="/images/hangman.png" alt="Screenshot of Hangman Game">
+        <div class="media-body">
+          <p>Generating random words for single player use, this hangman game allows users to set custom rules and is written purely in Python.</p>
+        </div>
+        <a href="https://github.com/smophat7/hangman-python" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="false">See the Code</a>
+      </div>
+      <div class="col-md-6 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">BYU Dance Redesign</h3>
+        <img class="rounded align-self-center img-fluid w-50 mb-3" src="/images/dance-byu.png" alt="Screenshot of BYU Dance Redesign">
+        <div class="media-body">
+          <p>I created a new version of the BYU Dance website with some refreshing changes. This project uses Bootstrap, HTML, and CSS.</p>
+        </div>
+        <a href="https://smophat7.github.io/cfacChallenge/home.html" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="true">Take a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Larger Screen Version -->
+  <div class="portfolio-container portfolio-large-screen">
+    <h1 class="p-5">Portfolio</h1>
+    <div class="row">
+      <div class="col-md-6 px-5 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">Pomodoro Productivity Timer</h3>
+        <div class="media">
+          <img class="rounded align-self-center mr-3 img-fluid w-25" src="/images/pomodoro-screenshot.png" alt="Screenshot of Pomodoro App">
+          <div class="media-body">
+            <p>To increase focused work, this productivity site features customer user settings and color schemes. This project uses JavaScript, jQuery, HTML, and CSS.</p>
+          </div>
+        </div>
+        <a href="http://smophat7.github.io/pomodoro/index.html" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="true">Get in the Zone</a>
+      </div>
+      <div class="col-md-6 px-5 pb-4" data-aos="fade-up" data-aos-once="true" data-aos-delay="300">
+        <h3 class="m-4">Memory Game</h3>
+        <div class="media">
+          <img class="rounded align-self-center mr-3 img-fluid w-25" src="/images/memory-game.png" alt="Screenshot of Memory Game">
+          <div class="media-body">
+            <p>Similar to Simon, this memory game adds one item to the pattern each round the user repeats it correctly. This project utilizes JavaScript, jQuery, HTML, and CSS.</p>
+          </div>
+        </div>
+        <a href="http://smophat7.github.io/memoryGame/" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="false">Play a Round</a>
+      </div>
+      <div class="col-md-6 px-5 pb-4" data-aos="fade-up" data-aos-once="true">
+        <h3 class="m-4">Terminal Hangman</h3>
+        <div class="media">
+          <img class="rounded align-self-center mr-3 img-fluid w-25" src="/images/hangman.png" alt="Screenshot of Hangman Game">
+          <div class="media-body">
+            <p>Generating random words for single player use, this hangman game allows users to set custom rules and is written purely in Python.</p>
+          </div>
+        </div>
+        <a href="https://github.com/smophat7/hangman-python" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="false">See the Code</a>
+      </div>
+      <div class="col-md-6 px-5 pb-4" data-aos="fade-up" data-aos-once="true" data-aos-delay="300">
+        <h3 class="m-4">BYU Dance Redesign</h3>
+        <div class="media">
+          <img class="rounded align-self-center mr-3 img-fluid w-25" src="/images/dance-byu.png" alt="Screenshot of BYU Dance Redesign">
+          <div class="media-body">
+            <p>I created a new version of the BYU Dance website with some refreshing changes. This project uses Bootstrap, HTML, and CSS.</p>
+          </div>
+        </div>
+        <a href="https://smophat7.github.io/cfacChallenge/home.html" class="btn btn-primary btn-lg m-3" role="button" aria-pressed="true">Take a Tour</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's Next? Container -->
+  <div class="inner-page-link">
+    <a id="what-next"></a>
+  </div>
+  <div class="what-next-container container py-5" data-aos="fade-up" data-aos-once="true">
+    <h2>What's Next?</h2>
+    <p class="my-4">Along with my work as a web developer at BYU Campus Accommodations, I am enrolled in Discrete Structures and Web Programming courses this semester. Projects I’m working on this semester include:</p>
+    <ul>
+      <li>Working with a group in the BYU Developers Club to convert an existing website to use React</li>
+      <li>Programming a Datalog interpreter using C++</li>
+      <li>Building a board game statistics tracking app using Vue, Node, Express, and MongoDB</li>
+    </ul>
+  </div>
+
+
+  <!-- Footer/Contact -->
+  <div class="inner-page-link">
+    <a id="contact"></a>
+  </div>
+  <div class="footer-contact container-fluid mb-0 pb-4">
+    <h2 class="pt-5 mb-0">Contact Me</h2>
+    <div class="container py-3">
+      <p>If you want to learn more about what I do and what I can offer, the best ways to contact me are through one of the following:</p>
+      <a href="https://www.linkedin.com/in/spencer-moffat" target="_blank"><img class="social-link" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" alt="LinkedIn-Logo"></a>
+      <a href="https://app.joinhandshake.com/users/11886054?ref=students" target="_blank"><img class="social-link" src="images/handshake_logo.png" alt="Handshake-logo"></a>
+    </div>
+    <hr>
+    <div class="footer-content mt-4">
+      <div class="container">
+        <button class="btn btn-dark btn-small image-credits mx-auto mb-2 d-block" type="button" data-toggle="collapse" data-target="#collapseCredits" aria-expanded="false" aria-controls="collapseCredits">Icon Credits</button>
+        <div class="collapse" id="collapseCredits">
+          <div class="card card-body">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+          </div>
+        </div>
+        <p>Site built from scratch using Bootstrap, JavaScript, HTML, CSS, and jQuery plugins.</p>
+        <p>© 2020 Spencer Moffat</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    $('.navbar-collapse a').click(function() {
+      $(".navbar-collapse").collapse('hide');
+    });
+  </script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>
+
+
+
+<!-- Wirefram icon (17 Grapes) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Parchment icon (Maxwell) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+<!-- Typewriter icon (Maxwell) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Book-brain icon (Education) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Graduate-cap icon (Education) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Neurosurgery icon (Surgery) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/ddara" title="dDara">dDara</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Brainstorm-just-brain icon (Surgery / Education) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Reading-book icon (Self-study) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Code icon (Self-study / Web-Dev) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Programming icon (Self-study / Web-Dev) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+<!-- Monitoring icon (Self-study / Web-Dev) -->
+<!-- <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
