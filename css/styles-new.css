@@ -228,7 +228,7 @@ ul {
   margin: auto;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1000px) {
   .portfolio-container .row {
     width: 85%;
   }
