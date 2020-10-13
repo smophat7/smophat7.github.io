@@ -1,5 +1,5 @@
 var isbn10 = 0,
-    isbn10_digits = [9, 7, 8];
+  isbn10_digits = [9, 7, 8];
 
 
 // Functionality of the "Convert" button
@@ -44,6 +44,11 @@ $("#isbn10-conversion").submit(function(e) {
 
 
   DisplayAPIData(isbn13);
+  // Hide loading spinner
+  $("#loading-symbol").addClass("d-none");
+
+  //Show API results
+  $(".api-data").removeClass("d-none");
 
   ResetValues();
 
@@ -82,8 +87,7 @@ function DisplayAPIData(isbn13) {
     .then(response => {
       if (response.ok) {
         return response.json();
-      }
-      else {
+      } else {
         throw new Error("Book data not found.");
       }
     }).then(json => {
@@ -102,8 +106,7 @@ function DisplayAPIData(isbn13) {
       try {
         if (json.publish_date == undefined) {
           $("#publish-date").html("<p>Published: unknown");
-        }
-        else {
+        } else {
           $("#publish-date").html("Published: " + json.publish_date);
         }
       } catch (err) {
@@ -114,8 +117,7 @@ function DisplayAPIData(isbn13) {
       try {
         if (json.number_of_pages == undefined) {
           $("#page-count").html("Pages: unknown");
-        }
-        else {
+        } else {
           $("#page-count").html("Pages: " + json.number_of_pages);
         }
       } catch (err) {
@@ -127,10 +129,4 @@ function DisplayAPIData(isbn13) {
       $("#publish-date").html("");
       $("#page-count").html("");
     });
-
-    // Hide loading spinner
-    $("#loading-symbol").addClass("d-none");
-
-    //Show API results
-    $(".api-data").removeClass("d-none");
 }
