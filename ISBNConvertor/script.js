@@ -1,5 +1,5 @@
 var isbn10 = 0,
-  isbn10_digits = [9, 7, 8];
+    isbn10_digits = [9, 7, 8];
 
 
 // Functionality of the "Convert" button
@@ -12,16 +12,21 @@ $("#isbn10-conversion").submit(function(e) {
   }
   isbn10 = isbn10.replace(/\D/g, "");
 
+  $(".api-data").addClass("d-none");
+  $(".isbn13-results-container").addClass("d-none");
+
   // Error message to user if a problem
   if (isbn10.length != 10) {
-    $(".isbn13-results-container").addClass("d-none");
-    $(".api-data").addClass("d-none");
     $(".btn").removeClass().addClass("btn btn-danger").text("INVALID");
     setTimeout(function() {
       $(".btn").removeClass().addClass("btn btn-dark").text("Convert");
     }, 1500);
     return false;
   }
+
+  // Show loading symbol(s)
+  $("#loading-symbol").removeClass("d-none");
+  $(".api-data").addClass("d-none");
 
   // Splits digits into an array and drops the last digit
   for (var i = 0; i < isbn10.length - 1; i++) {
@@ -37,7 +42,8 @@ $("#isbn10-conversion").submit(function(e) {
   $(".btn").removeClass().addClass("btn btn-success");
   $(".isbn13-results-container").removeClass("d-none");
 
-  DisplayGoodreadsData(isbn13);
+
+  DisplayAPIData(isbn13);
 
   ResetValues();
 
@@ -69,7 +75,8 @@ function ResetValues() {
 }
 
 //  API for book data
-function DisplayGoodreadsData(isbn13) {
+function DisplayAPIData(isbn13) {
+  // Open Library API
   const url = "https://openlibrary.org/isbn/" + isbn13 + ".json";
   fetch(url)
     .then(response => {
@@ -80,8 +87,7 @@ function DisplayGoodreadsData(isbn13) {
         throw new Error("Book data not found.");
       }
     }).then(json => {
-      console.log(json);
-      console.log(json.title);
+      // console.log(json);
 
       $("#book-title").html(json.title);
 
@@ -94,14 +100,24 @@ function DisplayGoodreadsData(isbn13) {
 
       // Publish date
       try {
-        $("#publish-date").html("Published: " + json.publish_date);
+        if (json.publish_date == undefined) {
+          $("#publish-date").html("<p>Published: unknown");
+        }
+        else {
+          $("#publish-date").html("Published: " + json.publish_date);
+        }
       } catch (err) {
         $("#publish-date").html("<p>Error: Publication date not found.");
       }
 
       // Page count
       try {
-        $("#page-count").html("Pages: " + json.number_of_pages);
+        if (json.number_of_pages == undefined) {
+          $("#page-count").html("Pages: unknown");
+        }
+        else {
+          $("#page-count").html("Pages: " + json.number_of_pages);
+        }
       } catch (err) {
         $("#page-count").html("<p>Error: Page count not found");
       }
@@ -112,5 +128,9 @@ function DisplayGoodreadsData(isbn13) {
       $("#page-count").html("");
     });
 
+    // Hide loading spinner
+    $("#loading-symbol").addClass("d-none");
+
+    //Show API results
     $(".api-data").removeClass("d-none");
 }
