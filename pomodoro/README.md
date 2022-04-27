@@ -1,4 +1,4 @@
-#Pomodoro Timer - Summer 2020
+# Pomodoro Timer - Summer 2020
 
 With unexpected additional time in the summer of 2020, I decided to learn more about web development. I'm always seeking to be as productive as possible, so when I stumbled upon the Pomodoro Technique I figured I could just make a pomodoro timer of my own.
 
